@@ -167,7 +167,8 @@ main {
 
   width: min(var(--max-width), 100% - (var(--container-padding) * 2));
   margin-inline: auto;
-
+  position: relative;
+  z-index: 0;
 }
 @media (max-width: 50em) {
   main {
@@ -207,7 +208,11 @@ main {
 
 #blur1,
 #blur2,
-#blur3 {
+#blur3,
+#blur4,
+#blur5,
+#blur6
+ {
   position: absolute;
   z-index: 0;
 }
@@ -227,6 +232,22 @@ main {
   bottom: -100px;
 }
 
+#blur4 {
+  top: 500px;
+  right: -200px;
+  opacity: 0.5;
+}
+
+#blur5 {
+  left: -300px;
+  top: 900px;
+  opacity: 0.5;
+}
+
+#blur6 {
+  right: -300px;
+  top: 1300px;
+}
 
 h1.heroText {
   font-size: var(--fs-primary-heading);
