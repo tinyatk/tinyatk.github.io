@@ -274,7 +274,7 @@ h1.heroText .highlight {
   text-decoration: none;
   border-radius: 100px;
   border: 0;
-  font-size: var(--fs-700);
+  font-size: 1.3em;
 }
 
 
