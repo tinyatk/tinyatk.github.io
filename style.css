@@ -269,11 +269,12 @@ h1.heroText .highlight {
 .button {
   display: inline-block;
   background-color: #44039B;
-  padding: 10px 20px;
+  padding: 0.4em 1.4em;
   color: #ffffff;
   text-decoration: none;
   border-radius: 100px;
   border: 0;
+  font-size: var(--fs-700);
 }
 
 
@@ -333,6 +334,10 @@ h1.heroText .highlight {
 
 .workExp {
   text-align: center;
+}
+.workLabel
+{ margin-top: 1em; display: inline-block;
+font-size: 1.2rem;
 }
 
 /* -- EXPERIENCES -- */
@@ -427,7 +432,7 @@ h1.heroText .highlight {
 
 @media (max-width: 50em) {
   .forHire {
-  width: 100%;
+  width: auto;
   padding: 2em;
   }
   
