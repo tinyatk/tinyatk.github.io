@@ -64,7 +64,7 @@
 body {
   font-family: var(--ff-primary);
   color: var(--clr-primary-400);
-
+  overflow-x: hidden;
 }
 
 .topcurve
@@ -169,6 +169,7 @@ main {
   margin-inline: auto;
   position: relative;
   z-index: 0;
+
 }
 @media (max-width: 50em) {
   main {
