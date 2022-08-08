@@ -250,7 +250,7 @@ main {
   top: 1300px;
 }
 @media (max-width: 50em) {
-  #blur3, #blur4, #blur5
+  #blur4, #blur5, #blur6
   {display: none;}
 }
 
