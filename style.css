@@ -249,6 +249,11 @@ main {
   right: -300px;
   top: 1300px;
 }
+@media (max-width: 50em) {
+  #blur3, #blur4, #blur5
+  {display: none;}
+}
+
 
 h1.heroText {
   font-size: var(--fs-primary-heading);
