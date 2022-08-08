@@ -337,10 +337,13 @@ h1.heroText .highlight {
 }
 @media (max-width: 50em) {
 
-
-  .skillIcon img {
-    margin: auto;
+  .skillIcon,
+  .skillIcon img
+  {
+    margin: 0 auto -20px auto;
   }
+
+
 }
 
 /* -- WORK AREA -- */
