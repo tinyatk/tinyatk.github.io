@@ -268,8 +268,8 @@ h1.heroText {
   color: #511AA5;
   background-color: #ffffff;
   display: inline-block;
-  padding: 2px 15px;
-  
+  padding: 2px 10px;
+  font-size: var(--fs-700);
 }
 
 .heroContainer .heroSub {
