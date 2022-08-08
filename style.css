@@ -309,7 +309,9 @@ h1.heroText .highlight {
 .even-columns {
   display: grid;
   gap: 2rem;
+  align-items: start;
 }
+
 
 @media (min-width: 50em) {
   .even-columns {
