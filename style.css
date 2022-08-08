@@ -178,7 +178,7 @@ main {
   }
   .even-columns
   {
-    justify-content: center;
+    justify-content: space-evenly;
   }
 }
 
@@ -360,8 +360,10 @@ h1.heroText .highlight {
 .workContainer .workItem a {
   color: var(--clr-primary-400);
   text-decoration: none;
-}
 
+}
+.workContainer .workItem
+{display: block; margin: auto;}
 .workExp {
   text-align: center;
 }
