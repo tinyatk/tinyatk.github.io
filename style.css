@@ -424,15 +424,6 @@ font-size: 1.2rem;
   text-align: center;
 }
 
-.experienceContainer img {
-  /* filter: none;
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  cursor: pointer;
-  opacity: 0.3; */
-}
 
 .logoContainer {
   margin-bottom: 80px;
