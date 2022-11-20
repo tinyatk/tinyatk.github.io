@@ -409,7 +409,7 @@ main {
 
 .textContainer h2 {
   font-size: var(--fs-800);
-  font-weight: var(--fw-regular);
+  font-weight: var(--fw-semi-bold);
   margin-bottom: 10px;
 }
 
@@ -462,7 +462,7 @@ main {
 }
 
 .textContainer .appIcon {
-  margin: 0 0 -30px -42px;
+  margin-bottom: 24px;
 
 }
 
