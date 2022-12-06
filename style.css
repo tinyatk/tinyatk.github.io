@@ -181,6 +181,10 @@ main {
   .even-columns {
     justify-content: space-evenly;
   }
+  .pic
+  {
+    order:-1;
+  }
 }
 
 
