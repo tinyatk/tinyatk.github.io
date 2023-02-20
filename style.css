@@ -309,10 +309,10 @@ main {
 
 
   .pic img {
-    margin: auto
+    margin: auto;
   }
 
-  ;
+  
 }
 
 
@@ -347,7 +347,7 @@ main {
 
 /* -- SKILL AREA -- */
 .skillsContainer {
-  margin-bottom: 60px;
+  margin-bottom: 160px;
   padding: 0 80px;
 }
 
@@ -367,7 +367,9 @@ main {
   .skillIcon img {
     margin: 0 auto -20px auto;
   }
-
+  .featuredWork {
+    padding: 60px 30px 50px 30px !important;
+  }
 
 }
 
