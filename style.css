@@ -275,11 +275,6 @@ main {
 
 @media (max-width: 50em) {
 
-  #blur4,
-  #blur5,
-  #blur6 {
-    display: none;
-  }
 }
 
 
