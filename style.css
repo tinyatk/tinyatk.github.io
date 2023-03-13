@@ -295,7 +295,9 @@ main {
   font-size: var(--fs-900);
   margin-bottom: var(--size-500);
   background-color: #ffffff;
-  display: inline-block;
+  display: inline;
+  line-height: 160%;
+  padding: 10px 0;
 }
 
 .highlight {
