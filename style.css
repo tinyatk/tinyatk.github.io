@@ -419,6 +419,7 @@ main {
   z-index: 1;
   width: 100%;
   max-width: 360px;
+  box-shadow: 0px 30px 40px rgba(23,12,33,0.5);
 }
 
 .videoContainer {
