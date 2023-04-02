@@ -157,6 +157,9 @@ body {
   .mobile-nav-toggle .icon-close {
     display: none;
   }
+  .heroContent{
+  order: 0 !important;
+  }
 }
 
 
@@ -188,7 +191,7 @@ main {
 
 .heroContainer {
   background-color: rgba(255, 255, 255, .3);
-  padding: 40px 60px 40px 60px;
+  padding: 40px 80px 40px 80px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -202,13 +205,14 @@ main {
 .heroContent {
   position: relative;
   z-index: 1;
-
-  width: calc(66.66% - 2em);
+  order: -1;
+  width: calc(70.66% - 2em);
 }
 
 .pic {
   position: relative;
   z-index: 1;
+
 }
 
 #blur1,
