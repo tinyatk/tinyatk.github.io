@@ -136,6 +136,7 @@ body {
     gap: var(--size-600);
     text-align: center;
     font-weight: var(--fw-bold);
+    align-items: start;
   }
 
   .primary-navigation[data-visible] {
@@ -237,7 +238,7 @@ main {
 
 #blur3 {
   left: 200px;
-  top: 70px;
+  top: -10px;
 }
 
 #blur4 {
@@ -248,7 +249,7 @@ main {
 
 #blur5 {
   right: -300px;
-  top: -200px;
+  top: -300px;
  z-index: -1;
 }
 
@@ -276,7 +277,7 @@ main {
 @media (max-width: 50em) {
   #blur5 {
     left: 0px;
-    top: 100px;
+    top: 0px;
 
   }
 }
@@ -413,7 +414,7 @@ main {
 .videoFrame {
   border: solid 10px #333333;
   border-radius: 40px;
-  margin: -150px auto 0 auto;
+  margin: -120px auto 0 auto;
   padding: 0;
   position: relative;
   z-index: 1;
