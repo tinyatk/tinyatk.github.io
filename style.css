@@ -288,17 +288,17 @@ main {
 
 
 .heroText {
-  font-size: var(--fs-800);
+  font-size: var(--fs-700);
   font-weight: var(--fw-regular);
   line-height: 1.3;
   margin-bottom: 20px;
-
+  margin-top: var(--size-400);
 }
 
 .heroContent h1 {
   font-weight: 500;
-  font-size: var(--fs-900);
-  margin-bottom: var(--size-500);
+  font-size: var(--fs-800);
+  
   background-color: #ffffff;
   display: inline;
   line-height: 160%;
