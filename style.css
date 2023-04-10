@@ -469,6 +469,7 @@ main {
   height: 150px;
   width: 150px;
   z-index: 0;
+  opacity: 0.4;
 }
 
 .blurBlue img,
