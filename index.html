@@ -15,272 +15,217 @@
   <meta property="og:image" itemprop="image" content="https://tinyatk.com/img/ogimage.jpg" />
   <meta property="og:type" content="website" />
   <meta name="robots" content="noindex">
-  
+
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWH3XB9HW7"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-JWH3XB9HW7');
-
-
-
-    function playVisibleVideos() {
-      document.querySelectorAll("video").forEach(video => elementIsVisible(video) ? video.play() : video.pause());
-    }
-
-    function elementIsVisible(el) {
-      let rect = el.getBoundingClientRect();
-      return (rect.bottom >= 0 && rect.right >= 0 && rect.top <= (window.innerHeight || document.documentElement.clientHeight) && rect.left <= (window.innerWidth || document.documentElement.clientWidth));
-    }
-
-    let playVisibleVideosTimeout;
-    window.addEventListener("scroll", () => {
-      clearTimeout(playVisibleVideosTimeout);
-      playVisibleVideosTimeout = setTimeout(playVisibleVideos, 100);
-    }, { passive: true });
-
-    window.addEventListener("resize", playVisibleVideos);
-    window.addEventListener("DOMContentLoaded", playVisibleVideos);
-
 
   </script>
 </head>
 
 <body>
-
-  <div class="topcurve"><img src="img/topcurve.svg" alt=""></div>
-  <div id="blur1"><img src="img/blueblur1.svg"></div>
-  <div id="blur4"><img src="img/blueblur2.svg"></div>
-    <div id="blur2"><img src="img/purpleblur1.svg"></div>
-  <div id="blur3"><img src="img/greenblur1.svg"></div>
-
-  <div id="blur5"><img src="img/purpleblur2.svg"></div>
   
-  <div id="circle1"><img src="img/circle1.svg"></div>
-  <div id="whitedot1"><img src="img/whitedot1.svg"></div>
-  <div id="whitedot2"><img src="img/whitedot1.svg"></div>
-  <div id="whitedot3"><img src="img/whitedot1.svg"></div>
+
   <main>
-    <section class="heroContainer">
-      <div class="pic">
-        <img src="img/avatar.png">
-      </div>
-      <div class="heroContent">
-        <h1><span class="highlight">Fintech UX Designer</span></h1>
-        <h2 class="heroText">Tin Yat Kwok</h2>
-        <p class="heroSub">UX specialist & Certified Usability Analyst (CUA). 13 years experience in UX, with focus in usability and user-centered design. Specialized in retail banking and wealth management apps.</p>
-        <a href="https://www.linkedin.com/in/tinyat/" class="button">Linkedin</a>
-      </div>
-      
-    </section>
-
-
-
-    <section class="skillsContainer even-columns">
-      <div class="skillItem">
-        <div class="skillIcon"><img src="img/stakeholdermgmt.svg"></div>
-        <h3>Stakeholder Mgmt</h3>
-        <p>Requirement gathering, idea conceptualization, business analysis </p>
-      </div>
-      <div class="skillItem">
-        <div class="skillIcon"><img src="img/design.svg"></div>
-        <h3>UI/UX Design</h3>
-        <p>Wireframes, rapid prototyping, & usability testing</p>
-      </div>
-      <div class="skillItem">
-        <div class="skillIcon"><img src="img/implementation.svg"></div>
-        <h3>Implementation</h3>
-        <p>UI framework, HTML, CSS, Accessibility & Internationalization</p>
-      </div>
-    </section>
-
-
-
-    <section class="featuredWork left">
-      <div class="videoContainer">
-        <video class="videoFrame" controls playsinline loop autoplay>
-          <source src="db_reimagined_compressed.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="blurBlue"><img src="img/purpleblur1.svg"></div>
-        <div class="blurPurple"><img src="img/purpleblur1.svg"></div>
-        <div class="waveBlue"><img src="img/bluewaves.svg"></div>
-        <div class="wavePurple"><img src="img/purplewaves.svg"></div>
-      </div>
-
-      <div class="textContainer">
-        <img class="appIcon" src="img/concepticon.svg">
-        <em class="subtitle">A CONCEPTUAL IDEA</em>
-        <h2>Digital Banking<span class="highlight">Concepts</span></h2>
-        <p>See how the next generation digital banking application can enhance customer experience. Complete with spending analysis, cards management, and task reminders.</p>
-        <a href="bankingconcept.html" class="button">See details</a>
-      </div>
-    </section>
-
-    <section class="featuredWork right">
-      <div class="videoContainer">
-        <video class="videoFrame" controls playsinline loop autoplay>
-          <source src="ploan.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="blurBlue"><img src="img/blueblur1.svg"></div>
-        <div class="blurPurple"><img src="img/purpleblur1.svg"></div>
-        <div class="waveBlue"><img src="img/bluewaves.svg"></div>
-        <div class="wavePurple"><img src="img/purplewaves.svg"></div>
-      </div>
-
-      <div class="textContainer">
-        <img class="appIcon" src="img/ploanicon.svg">
-        <em class="subtitle">CASE STUDY</em>
-        <h2>Personal Loan<span class="highlight">Revamp</span></h2>
-        <p>A case study of personal loan revamp project. Learn how UX issues are identified and addressed, and improved user experience can drive up your business</p>
-        <a href="ploan.html" class="button">See details</a>
-      </div>
-    </section>
-
-    <!--<section class="featuredWork left">
-      <div class="videoContainer">
-        <video class="videoFrame" controls playsinline loop autoplay>
-          <source src="findhouse.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="blurBlue"><img src="img/blueblur1.svg"></div>
-        <div class="blurPurple"><img src="img/purpleblur1.svg"></div>
-        <div class="waveBlue"><img src="img/bluewaves.svg"></div>
-        <div class="wavePurple"><img src="img/purplewaves.svg"></div>
-      </div>
-
-      <div class="textContainer">
-        <img class="appIcon" src="img/findhouseicon.svg">
-        <em class="subtitle">A CONCEPTUAL IDEA</em>
-        <h2>Real Estate<span class="highlight">Concepts</span></h2>
-        <p>View property information, take virtual reality tours, and communicate with agents via live chat. Get a 360-degree view of the properties you’re interested in, and ask questions in real-time to get instant answers.</p>
-        <a href="findhouse.html" class="button">See details</a>
-      </div>
-    </section>-->
-
-    <section class="workContainer">
-      <h3 class="moreWorks">More works</h3>
-      <div class="even-columns">
-
-
-        <div class="workItem">
-          <a href="img/creditc_large.jpg"><img src="img/creditc.jpg">
-            <span class="workLabel">Credit Card 信用卡</span>
-          </a>
-        </div>
-        <div class="workItem">
-          <a href="img/domestichelper_large.jpg"><img src="img/domestichelper.jpg">
-            <span class="workLabel">Domestic Helper Insurance 家傭保障</span>
-          </a>
-        </div>
-        <div class="workItem">
-          <a href="img/laisee_large.jpg"><img src="img/laisee.jpg">
-            <span class="workLabel">E-Lai See 派發電子利是</span>
-          </a>
-        </div>
-      </div>
-      <div class="even-columns">
-
-
-        <div class="workItem">
-          <a href="img/oddlot.jpg"><img src="img/notalot.jpg">
-            <span class="workLabel">Odd Lot Trading 碎股買賣</span>
-          </a>
-        </div>
-        <div class="workItem">
-          <a href="img/widget_large.jpg"><img src="img/widget.jpg">
-            <span class="workLabel">Stock widget 股票小工具</span>
-          </a>
-        </div>
-        <div class="workItem">
-          <a href="img/getnotes_large.jpg"><img src="img/getnotes.jpg">
-            <span class="workLabel">Get New Notes 預約換領新鈔</span>
-          </a>
-        </div>
-
-      </div>
-      <div class="even-columns">
-
-        <div class="workItem">
-          <a href="img/crossborder_large.jpg"><img src="img/crossborder.jpg">
-            <span class="workLabel">Cross-border Homepage 跨境主頁</span>
-          </a>
-        </div>
-
-        <div class="workItem">
-          <a
-            href="https://ghe6vf.axshare.com/#id=pb0nmm&p=1_%E4%B8%AD%E9%8A%80%E5%BF%AB%E5%8C%AF%E6%B5%81%E7%A8%8B_overview&g=1"><img
-              src="img/remit.jpg">
-            <span class="workLabel">China Remittance 中銀快匯<br>(pw: demo)</span>
-          </a>
-        </div>
-        <div class="workItem">
-          <a href="img/appstorepreview_large.jpg"><img src="img/appstorepreview.jpg">
-            <span class="workLabel">App Store Preview</span>
-          </a>
-        </div>
-      </div>
-
-
-      <!--<div class="even-columns">
-
-
-        <div class="workItem">
-          <a href="img/hikingconcept_large.png"><img src="img/hikingconceptual.jpg">
-            <span class="workLabel">Conceptual Hiking App</span>
-          </a>
-        </div>
-        <div class="workItem"></div>
-        <div class="workItem"></div>
+    <nav>
+      <div class="logo"><img src="img/logo.svg"></div>
+      <!--<div class="links">
+        <a href="#skills" class="">Skills</a>
+        <a href="#cases" class="">Cases</a>
+        <a href="#works" class="">Works</a>
+        <a href="#about" class="">About</a>
+        <a href="mailto:tinone@gmail.com" class="button small">Contact</a>
       </div>-->
+    </nav>
+
+    <section class="hero">
+      <h1>Fintech UI/UX Designer</h1>
+      <p>Specialized in banking & finance digital projects</p>
+      <a href="mailto:tinone@gmail.com" class="button large">Contact</a>
     </section>
 
-    <section class="experienceContainer">
-      <h3>Work Experience</h3>
-      <div class="logoContainer">
-        <div class="workExp">
-          <img class="logo" src="img/boc.svg">
-        </div>
-        <div class="workExp">
-          <img class="logo" src="img/hsb.svg">
-        </div>
-        <div class="workExp">
-          <img class="logo" src="img/1b.svg">
-        </div>
-        <div class="workExp">
-          <img class="logo" src="img/ob.png">
-        </div>
-      </div>
-      <h3>Education</h3>
-      <div class="eduContainer">
-        <div class="edu">
-          <img class="logo" src="img/rm1t.svg">
-        </div>
-        <div class="edu">
-          <img class="logo" src="img/hfi.svg">
-        </div>
+    <section class="herobg"><img src="img/hero_phones.webp"></section>
+
+    <section class="previousCompany">
+      <p>Developing digital platforms for corporations since 2007</p>
+      <div class="logos two_columns">
+        <img src="img/boc.svg">
+        <img src="img/hsb.svg">
+        <img src="img/1bm.svg">
+        <img src="img/ob.webp">
       </div>
     </section>
 
-    <section class="forHire">
-      <h4 class="line1">Now available</h4>
-      <h3 class="line2">For hire</h3>
-      <div class="img"><img src="img/draw.svg"></div>
-      <a href="mailto:tinyatkwok@gmail.com" class="button">Contact</a>
+    <section class="skills">
+      <div class="bigTitle">
+        <img class="titleIcon" src="img/skills_icon.svg">
+        <h2>Elevate your digital product to the next level</h2>
+      </div>
+
+
+      <div class="skillItem two_columns">
+        <div class="skillImg">
+        <img class="" src="img/skill1.svg">
+      </div>
+        <div class="skillContent">
+          <div class="tag">15+ year experience</div>
+          <h3>UI/UX design</h3>
+          <div class="skillpoints">
+            <ul>
+              <li class="point1">I craft intuitive interfaces and cohesive user experiences. </li>
+              <li class="point2">UI aesthetics and functionality are balanced , ensuring seamless navigation and accessibility. </li>
+              <li class="point3">By empathizing with users, they create designs that are not only visually appealing but also
+                user-friendly, enhancing overall satisfaction and engagement.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="skillItem two_columns">
+        <div class="skillImg">
+        <img class="" src="img/skill2.svg">
+      </div>
+        <div class="skillContent minusOrder">
+          <div class="tag">10+ year experience</div>
+          <h3>Collaborate with stake holders</h3>
+          <div class="skillpoints">
+            <ul>
+              <li class="point4">Collaborate closely with product owners, developers, and business analysts to ensure design aligns with
+                business goals, technical constraints, and user needs.</li>
+              <li class="point5">Daily interactions often involve workshops, design reviews, and iterative feedback sessions to refine
+                product features and enhance user experience.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+
+    </section>
+
+    <section class="accomplishmentsContainer two_columns">
+      <div class="accomplishment">
+        <img class="" src="img/grow_platform.svg">
+        <h3>Grow your platform</h3>
+        <p>Exceptional user experience drives customer retention and referrals, catalyzing robust business expansion.
+        </p>
+      </div>
+      <div class="accomplishment">
+        <img class="" src="img/maphk.svg">
+        <h3>Serving over 3 million users</h3>
+        <p>Developed applications that reached 3 million users
+        </p>
+      </div>
+    </section>
+
+    <section class="caseStudyContainer">
+
+      <div class="bigTitle">
+        <img class="titleIcon" src="img/casestudy_icon.svg">
+        <h2>Case Study</h2>
+      </div>
+
+      <div class="caseStudyItem two_columns">
+        <div class="caseStudyImage"><img class="appIcon" src="img/casestudy1.webp">
+        </div>
+        <div class="casestudyContent minusOrder">
+          <img class="appIcon" src="img/bocapp_icon.svg">
+          <h3>Account opening</h3>
+          <p class="subtitle">UI/UX DESIGN &#8226; 2022</p>
+          <p>Redesigning the account opening experience for the BOCHK app</p>
+          <a href="aop.html" class="button small">Read the case study →</a>
+        </div>
+      </div>
+
+      <div class="caseStudyItem two_columns">
+        <div class="caseStudyImage"><img class="appIcon" src="img/casestudy2.webp">
+        </div>
+        <div class="casestudyConten minusOrder">
+          <img class="appIcon" src="img/bocapp_icon.svg">
+          <h3>Personal Loan</h3>
+          <p class="subtitle">UI/UX DESIGN &#8226; 2021</p>
+          <p>Redesigning the loan experience for the BOCHK app</p>
+          <a href="ploan.html" class="button small">Read the case study →</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="bigTitle">
+      <img class="titleIcon" src="img/moreworks_icon.svg">
+      <h2>More works</h2>
+    </div>
+
+    <section class="moreWorksContainer ">
+      
+
+<div class="two_columns">
+      <div class="workItem">
+        <a href="bankingconcept.html"><img src="img/bankappconcept_thumb.webp">
+          <span class="workLabel">Banking App Concept</span>
+        </a>
+      </div>
+
+      <div class="workItem">
+        <a href="img/creditc_large.jpg"><img src="img/creditcard_thumb.webp">
+          <span class="workLabel">Credit Card 信用卡</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="two_columns">
+      <div class="workItem">
+        <a href="img/domestichelper_large.jpg"><img src="img/domestichelper_thumb.webp">
+          <span class="workLabel">Domestic Helper Insurance 家傭保障</span>
+        </a>
+      </div>
+
+      <div class="workItem">
+        <a href="img/laisee_large.jpg"><img src="img/elaisee_thumb.webp">
+          <span class="workLabel">E-Lai See 派發電子利是</span>
+        </a>
+      </div>
+      </div>
+    </section>
+
+
+
+    <section class="aboutMeContainer two_columns">
+      <div class="aboutMeImage"><img class="" src="img/me.webp">
+      </div>
+      <div class="aboutMeContent">
+        <p class="tag">15+ year experience</p>
+        <h2>Tin Yat Kwok</h2>
+        <p class="location">Hong Kong</p>
+        <p>Driven by passion for design, I’ve dedicated 15 years to mastering UI/UX, with a foundation in interaction
+          design from university. My journey through banking and tech industries fuels my commitment to creating
+          meaningful, user-centered experiences.</p>
+      </div>
+    </section>
+
+
+    <section class="forHireContainer">
+      <div class="forHireImage">
+        <img class="" src="img/forhire.svg">
+      </div>
+      <div class="forHireContent">
+        <h2>Now available For hire</h2>
+        <p>Ready to bring your vision to life? Let’s collaborate and craft exceptional digital
+          experiences together</p>
+        <a href="mailto:tinone@gmail.com" class="button small">Contact</a>
+      </div>
+
     </section>
 
   </main>
 
+
+  <footer></footer>
   <script type="module" src="/main.js"></script>
 </body>
 
