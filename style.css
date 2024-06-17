@@ -211,7 +211,7 @@ nav {
     flex-direction: column;
     text-align: center;
     background-position: top center;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
 }
 
 .bigTitle h2 {
@@ -308,9 +308,9 @@ position: relative;
 
     background: linear-gradient(135deg, #f5f9ff 0%, #ffffff 100%);
     align-items: center;
-    padding: 2rem 4rem;
+    padding: 0rem 4rem 0 4rem;
     border-radius: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 50em) {
@@ -353,7 +353,7 @@ position: relative;
 .workLabel,
 .workLabel:visited,
 .workLabel:active {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     display: block;
     color: var(--clr-primary-400);
     font-size: var(--size-500);
@@ -383,6 +383,11 @@ position: relative;
 .aboutMeImage
 {
     margin: auto;
+}
+
+.aboutMeImage img
+{
+    max-width: 80%;
 }
 @media (max-width: 50em) {
     .aboutMeContainer {
