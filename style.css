@@ -207,10 +207,11 @@ nav {
 .bigTitle {
     background-image: url(img/sectionheader_bg.webp);
     background-repeat: no-repeat;
-    padding: 4rem 0 3rem 0;
+    padding: 4rem 0 4rem 0;
     flex-direction: column;
     text-align: center;
     background-position: top center;
+    margin-bottom: 1rem;
 }
 
 .bigTitle h2 {
@@ -240,6 +241,10 @@ nav {
     margin: 0 0 4em 0;
     align-items: center;
 }
+.skillImg img{
+     max-width:80%;
+    margin: auto;
+    }
 .skillImg{
 position: relative;
 }
