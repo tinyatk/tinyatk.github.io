@@ -194,6 +194,8 @@ main {
 @media (max-width: 50em) {
     .logos img {
         margin: 0 auto 2em auto;
+        width: 30%;
+        max-width: 30%;
     }
 
 }
@@ -300,6 +302,10 @@ position: relative;
     .skillContent {
         margin-top: 1rem;
     }
+    .skillItem 
+    {
+        padding: 2rem;
+    }
 
 }
 
@@ -327,7 +333,7 @@ position: relative;
 }
 
 .caseStudyItem p {
-    margin-top: 0.4rem;
+    margin: 0.4rem 0 0.6rem 0;
 }
 
 .caseStudyItem .button {
@@ -380,7 +386,7 @@ position: relative;
     align-items: center;
     margin-top: 2rem;
 }
-.aboutMeImage
+.aboutMeImage, .aboutMeImage img
 {
     margin: auto;
 }
