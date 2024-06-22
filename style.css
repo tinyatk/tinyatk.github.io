@@ -169,12 +169,39 @@ main {
 .herobg {
     background-image: url(img/hero_bg.webp);
     background-size: cover;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    gap: 2rem;
+    padding: 0 2rem;
 }
+
 
 .herobg img {
-    margin: auto;
+   width:25%;
+}
+
+.videoFrame {
+    border:  1vmin solid #222222;
+    border-radius: 5vmin;
+    /*margin: 0px auto 0 auto;*/
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    /*width: 100%;
+    max-width: 100px;*/
+    /*box-shadow: 0px 30px 40px rgba(23,12,33,0.5);*/
+    width:31%;
+  }
+
+  @media (max-width: 50em) {
+    .herobg {
+
+        gap: 1rem;
+    }
 
 }
+
 
 .hero .button {
     margin: 1rem 0 2rem 0;
