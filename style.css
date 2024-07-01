@@ -183,6 +183,7 @@ main {
 
 .videoFrame {
     border:  1vmin solid #222222;
+    outline:  0.3vmin solid #aaaaaa;
     border-radius: 5vmin;
     /*margin: 0px auto 0 auto;*/
     padding: 0;
@@ -213,10 +214,7 @@ main {
     margin: 4rem 0 0 0;
 }
 
-.logos {
-    justify-content: space-between;
-    margin: 2rem 0 0 0;
-}
+
 
 @media (max-width: 50em) {
     .logos img {
