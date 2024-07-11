@@ -158,7 +158,7 @@ main {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        padding: 2rem 0rem 0.2rem 0;
+        padding: 1.4rem 0rem 0.2rem 0;
     }
 }
 
@@ -200,6 +200,14 @@ main {
     .herobg {
 
         gap: 1rem;
+    }
+    #phoneLeft, #phoneRight
+    {
+        display: none;
+    }
+    .videoFrame
+    {
+        width: 80%;
     }
 
 }
