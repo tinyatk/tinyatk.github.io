@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
-  <title>Tin Yat Kwok Portfolio</title>
+  <title>Fintech Product Designer - Tin Yat Kwok Portfolio</title>
   <meta property="og:title" content="Tin Yat Kwok Portfolio" />
   <meta name="description" content="UX designer based in Hong Kong" />
   <meta property="og:url" content="https://tinyatk.com/" />
@@ -30,28 +30,34 @@
 </head>
 
 <body>
-  
 
   <main>
     <nav>
+      <div class="navWrapper">
       <div class="logo"><img src="img/logo.svg"></div>
-
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#casestudy">Case study</a></li>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
     </nav>
 
-    <section class="hero">
-      <h1>Fintech UI/UX Designer</h1>
+    <section id="home" class="hero">
+      <h1>Fintech Product Designer</h1>
       <p>Specialized in banking & finance digital projects</p>
       <a href="#" class="button large">Contact</a>
     </section>
 
     <section class="herobg">
       <img id="phoneLeft" src="img/hero_phone1.webp">
-        <video class="videoFrame" controls playsinline loop autoplay muted>
+      <video class="videoFrame" controls playsinline loop autoplay muted>
         <source src="img/db_reimagined_compressed.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <img id="phoneRight" src="img/hero_phone2.webp">
-      </section>
+    </section>
 
     <section class="previousCompany">
       <p>Developing digital platforms for corporations since 2007</p>
@@ -72,16 +78,18 @@
 
       <div class="skillItem two_columns">
         <div class="skillImg">
-        <img class="" src="img/skill1.svg">
-      </div>
+          <img class="" src="img/skill1.svg">
+        </div>
         <div class="skillContent">
           <div class="tag">15+ year experience</div>
           <h3>UI/UX design</h3>
           <div class="skillpoints">
             <ul>
               <li class="point1">I craft intuitive interfaces and cohesive user experiences. </li>
-              <li class="point2">UI aesthetics and functionality are balanced , ensuring seamless navigation and accessibility. </li>
-              <li class="point3">By empathizing with users, they create designs that are not only visually appealing but also
+              <li class="point2">UI aesthetics and functionality are balanced , ensuring seamless navigation and
+                accessibility. </li>
+              <li class="point3">By empathizing with users, they create designs that are not only visually appealing but
+                also
                 user-friendly, enhancing overall satisfaction and engagement.</li>
             </ul>
           </div>
@@ -90,16 +98,18 @@
 
       <div class="skillItem two_columns">
         <div class="skillImg">
-        <img class="" src="img/skill2.svg">
-      </div>
+          <img class="" src="img/skill2.svg">
+        </div>
         <div class="skillContent minusOrder">
           <div class="tag">10+ year experience</div>
           <h3>Collaborate with stake holders</h3>
           <div class="skillpoints">
             <ul>
-              <li class="point4">Collaborate closely with product owners, developers, and business analysts to ensure design aligns with
+              <li class="point4">Collaborate closely with product owners, developers, and business analysts to ensure
+                design aligns with
                 business goals, technical constraints, and user needs.</li>
-              <li class="point5">Daily interactions often involve workshops, design reviews, and iterative feedback sessions to refine
+              <li class="point5">Daily interactions often involve workshops, design reviews, and iterative feedback
+                sessions to refine
                 product features and enhance user experience.</li>
             </ul>
           </div>
@@ -125,78 +135,80 @@
       </div>
     </section>
 
-    <section class="caseStudyContainer">
+    <section id="casestudy" class="caseStudyContainer">
 
       <div class="bigTitle">
         <img class="titleIcon" src="img/casestudy_icon.svg">
         <h2>Case Study</h2>
       </div>
 
-      <div class="caseStudyItem two_columns">
-        <div class="caseStudyImage"><img class="appIcon" src="img/casestudy1.webp">
+      <a class="caseStudyLink" href="aop.html">
+        <div class="caseStudyItem two_columns">
+          <div class="caseStudyImage"><img class="caseImg" src="img/casestudy1.webp">
+          </div>
+          <div class="casestudyContent minusOrder">
+            <img class="appIcon" src="img/bocapp_icon.svg">
+            <h3>Bank account opening</h3>
+            <p class="subtitle">UI/UX DESIGN &#8226; 2022</p>
+            <p>Redesigning the account opening experience for the BOCHK app</p>
+            <span class="button small">Read the case study →</span>
+          </div>
         </div>
-        <div class="casestudyContent minusOrder">
-          <img class="appIcon" src="img/bocapp_icon.svg">
-          <h3>Bank account opening</h3>
-          <p class="subtitle">UI/UX DESIGN &#8226; 2022</p>
-          <p>Redesigning the account opening experience for the BOCHK app</p>
-          <a href="aop.html" class="button small">Read the case study →</a>
-        </div>
-      </div>
+      </a>
 
-      <div class="caseStudyItem two_columns">
-        <div class="caseStudyImage"><img class="appIcon" src="img/casestudy2.webp">
+      <a class="caseStudyLink" href="ploan.html">
+        <div class="caseStudyItem two_columns">
+          <div class="caseStudyImage"><img class="caseImg" src="img/casestudy2.webp">
+          </div>
+          <div class="casestudyConten minusOrder">
+            <img class="appIcon" src="img/bocapp_icon.svg">
+            <h3>Personal loan application</h3>
+            <p class="subtitle">UI/UX DESIGN &#8226; 2021</p>
+            <p>Redesigning the loan experience for the BOCHK app</p>
+            <span href="ploan.html" class="button small">Read the case study →</span>
+          </div>
         </div>
-        <div class="casestudyConten minusOrder">
-          <img class="appIcon" src="img/bocapp_icon.svg">
-          <h3>Personal loan application</h3>
-          <p class="subtitle">UI/UX DESIGN &#8226; 2021</p>
-          <p>Redesigning the loan experience for the BOCHK app</p>
-          <a href="ploan.html" class="button small">Read the case study →</a>
-        </div>
-      </div>
+      </a>
     </section>
 
-    <div class="bigTitle">
+    <div id="works" class="bigTitle">
       <img class="titleIcon" src="img/moreworks_icon.svg">
       <h2>More works</h2>
     </div>
 
     <section class="moreWorksContainer ">
-      
+      <div class="two_columns">
+        <div class="workItem">
+          <a href="bankingconcept.html"><img src="img/bankappconcept_thumb.webp">
+            <span class="workLabel">Banking App Concept</span>
+          </a>
+        </div>
 
-<div class="two_columns">
-      <div class="workItem">
-        <a href="bankingconcept.html"><img src="img/bankappconcept_thumb.webp">
-          <span class="workLabel">Banking App Concept</span>
-        </a>
+        <div class="workItem">
+          <a href="img/creditc_large.jpg"><img src="img/creditcard_thumb.webp">
+            <span class="workLabel">Credit Card 信用卡</span>
+          </a>
+        </div>
       </div>
 
-      <div class="workItem">
-        <a href="img/creditc_large.jpg"><img src="img/creditcard_thumb.webp">
-          <span class="workLabel">Credit Card 信用卡</span>
-        </a>
-      </div>
-    </div>
+      <div class="two_columns">
+        <div class="workItem">
+          <a href="img/domestichelper_large.jpg"><img src="img/domestichelper_thumb.webp">
+            <span class="workLabel">Domestic Helper Insurance 家傭保障</span>
+          </a>
+        </div>
 
-    <div class="two_columns">
-      <div class="workItem">
-        <a href="img/domestichelper_large.jpg"><img src="img/domestichelper_thumb.webp">
-          <span class="workLabel">Domestic Helper Insurance 家傭保障</span>
-        </a>
-      </div>
-
-      <div class="workItem">
-        <a href="img/laisee_large.jpg"><img src="img/elaisee_thumb.webp">
-          <span class="workLabel">E-Lai See 派發電子利是</span>
-        </a>
-      </div>
+        <div class="workItem">
+          <a href="img/laisee_large.jpg"><img src="img/elaisee_thumb.webp">
+            <span class="workLabel">E-Lai See 派發電子利是</span>
+          </a>
+        </div>
       </div>
     </section>
 
 
 
-    <section class="aboutMeContainer two_columns">
+    <section id="about" class="aboutMeContainer two_columns">
       <div class="aboutMeImage"><img class="" src="img/me.webp">
       </div>
       <div class="aboutMeContent">
