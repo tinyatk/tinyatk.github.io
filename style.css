@@ -3,6 +3,7 @@
     --clr-accent-400: hsl(12, 88%, 59%);
     --clr-accent-300: hsl(12, 88%, 75%);
     --clr-accent-100: hsl(13, 100%, 96%);
+    --clr-nav-link: #0A1136;
 
     --clr-primary-400: #0A1136;
 
@@ -117,16 +118,64 @@ main {
     margin-inline: auto;
     position: relative;
     z-index: 0;
+}
+nav
+{
+    position:fixed;
+    background-color: rgba(255, 255, 255, .9);
+    /*box-shadow: 10px 5px 5px rgb(0 0 0 / 4%);*/
+    z-index: 100;
+    top: 0;
+    width: 100%;
+    left: 0;
+    backdrop-filter: blur(10px);
+}
+.navWrapper
+{
+    --max-width: 1000px;
+    width: min(var(--max-width), 100% - (var(--container-padding) * 2));
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul {
+    padding: 0;
+    margin: 1.4rem 0;
+}
+nav li{
+    display: inline;
+    list-style: none;
+    margin-right: 2.2rem;
+
+}
+nav li:last-child{
+    margin-right: 0;
+}
+
+nav li a
+{
+    text-decoration: none;
+    color: #666D80;
+    align-items: center;
+}
+
+nav li a.active
+{
+    font-weight: var(--fw-semi-bold);
+    color: var(--clr-nav-link);
+    border-bottom: 2px solid var(--clr-nav-link);
 
 }
 
 .logo {
-    padding: 1rem 0rem;
+
+}
+@media (max-width: 50em) {
+    nav, .logo {position: static;}
+    nav ul  {display: none;}
 }
 
-.logo img {
-    display: inline-block;
-}
 
 .two_columns {
     display: flex;
@@ -165,6 +214,7 @@ main {
 /* HERO SECTION */
 .hero {
     text-align: center;
+    margin-top: 6rem;
 }
 
 .herobg {
@@ -180,6 +230,11 @@ main {
 
 .herobg img {
    width:25%;
+}
+@media (max-width: 50em) {
+    .hero {
+        margin-top: 0;
+    }
 }
 
 .videoFrame {
@@ -214,7 +269,7 @@ main {
 
 
 .hero .button {
-    margin: 1rem 0 2rem 0;
+    margin: 1rem 0 3rem 0;
 }
 
 /* LOGO SECTION*/
@@ -247,10 +302,6 @@ main {
 }
 
 
-nav {
-    display: flex;
-}
-
 /* COMMON LARGE HEADING */
 .bigTitle {
     background-image: url(img/sectionheader_bg.webp);
@@ -267,7 +318,7 @@ nav {
 }
 
 .titleIcon {
-    margin: 0 auto 2rem;
+    margin: 0 auto 1.4rem;
 }
 
 .accomplishment h3 {
@@ -283,8 +334,7 @@ nav {
     gap: 3rem;
     align-content: stretch;
 }*/
-.skills
-{}
+
 .skillItem {
     margin: 0 0 4em 0;
     align-items: center;
@@ -367,7 +417,7 @@ position: relative;
 
 @media (max-width: 50em) {
     .caseStudyItem {
-        padding: 2rem;
+        padding: 1rem 2rem 1rem 2rem;
     }
 
 }
@@ -377,6 +427,15 @@ position: relative;
     font-weight: 500;
 
 }
+.caseStudyContainer .caseStudyLink,
+.caseStudyContainer .caseStudyLink:visited,
+.caseStudyContainer .caseStudyLink:active,
+.caseStudyContainer .caseStudyLink:focus
+{
+color: inherit;
+text-decoration: none;
+}
+
 
 .caseStudyItem p {
     margin: 0.4rem 0 0.6rem 0;
@@ -388,7 +447,11 @@ position: relative;
 
 
 .caseStudyItem .appIcon {
-    margin-top: 1rem;
+    margin: 1rem 0;
+}
+
+.caseStudyItem .caseImg {
+    margin: 1.5rem 0 0 0;
 }
 
 /* MORE WORK SECTION */
