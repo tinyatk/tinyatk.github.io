@@ -67,7 +67,9 @@
 
 
 }
-
+html {
+	scroll-behavior: smooth;
+}
 p {
     margin-top: 0.3rem;
     margin-bottom: 0.3rem;
@@ -82,7 +84,7 @@ p {
     font-weight: 500;
     border-radius: 100px;
     padding: 0.3rem 1rem;
-    margin-bottom: 0.2rem
+    margin-bottom: 0.8rem
 }
 
 .minusOrder {
@@ -99,16 +101,19 @@ h1 {
     font-size: var(--size-700);
     margin: 1rem 0;
     line-height: 120%;
+    font-weight: var(--fw-semi-bold);
 }
 
 h2 {
     font-size: var(--size-600);
     margin: 0.3rem 0;
+    font-weight: var(--fw-semi-bold);
 }
 
 h3 {
     font-size: var(--size-500);
     margin: 0.04rem 0;
+    font-weight: var(--fw-semi-bold);
 }
 
 main {

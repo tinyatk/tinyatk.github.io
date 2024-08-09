@@ -10,7 +10,7 @@
 
   <title>Fintech Product Designer - Tin Yat Kwok Portfolio</title>
   <meta property="og:title" content="Tin Yat Kwok Portfolio" />
-  <meta name="description" content="UX designer based in Hong Kong" />
+  <meta name="description" content="Fintech Product Designer based in Hong Kong" />
   <meta property="og:url" content="https://tinyatk.com/" />
   <meta property="og:image" itemprop="image" content="https://tinyatk.com/img/ogimage.jpg" />
   <meta property="og:type" content="website" />
@@ -24,9 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWH3XB9HW7"></script>
-  <script>
 
-  </script>
 </head>
 
 <body>
@@ -34,48 +32,48 @@
   <main>
     <nav>
       <div class="navWrapper">
-      <div class="logo"><img src="img/logo.svg"></div>
-      <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#casestudy">Case study</a></li>
-        <li><a href="#works">Works</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </div>
+        <div class="logo"><img src="img/logo.svg"></div>
+        <ul>
+          <li><a href="#hometop" class="hometop">Home</a></li>
+          <li><a href="#skills" class="skills">Skills</a></li>
+          <li><a href="#casestudy" class="casestudy">Case study</a></li>
+          <li><a href="#works" class="works">Works</a></li>
+          <li><a href="#about" class="about">About</a></li>
+        </ul>
+      </div>
     </nav>
 
-    <section id="home" class="hero">
-      <h1>Fintech Product Designer</h1>
-      <p>Specialized in banking & finance digital projects</p>
-      <a href="#" class="button large">Contact</a>
-    </section>
+    <section id="hometop">
+      <section class="hero">
+        <h1>Fintech Product Designer</h1>
+        <p>Specialized in banking & finance digital projects</p>
+        <a href="#" class="button large">Contact</a>
+      </section>
 
-    <section class="herobg">
-      <img id="phoneLeft" src="img/hero_phone1.webp">
-      <video class="videoFrame" controls playsinline loop autoplay muted>
-        <source src="img/db_reimagined_compressed.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <img id="phoneRight" src="img/hero_phone2.webp">
-    </section>
+      <section class="herobg">
+        <img id="phoneLeft" src="img/hero_phone1.webp">
+        <video class="videoFrame" controls playsinline loop autoplay muted>
+          <source src="img/db_reimagined_compressed.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <img id="phoneRight" src="img/hero_phone2.webp">
+      </section>
 
-    <section class="previousCompany">
-      <p>Developing digital platforms for corporations since 2007</p>
-      <div class="logos">
-        <img src="img/boc.svg">
-        <img src="img/hsb.svg">
-        <img src="img/1bm.svg">
-        <img src="img/ob.webp">
-      </div>
+      <section class="previousCompany">
+        <p>Developing digital platforms for corporations since 2007</p>
+        <div class="logos">
+          <img src="img/boc.svg">
+          <img src="img/hsb.svg">
+          <img src="img/1bm.svg">
+          <img src="img/ob.webp">
+        </div>
+      </section>
     </section>
-
-    <section class="skills">
+    <section id="skills" xclass="skills">
       <div class="bigTitle">
         <img class="titleIcon" src="img/skills_icon.svg">
         <h2>Elevate your digital product to the next level</h2>
       </div>
-
-
       <div class="skillItem two_columns">
         <div class="skillImg">
           <img class="" src="img/skill1.svg">
@@ -171,12 +169,12 @@
       </a>
     </section>
 
-    <div id="works" class="bigTitle">
+    <div class="bigTitle">
       <img class="titleIcon" src="img/moreworks_icon.svg">
       <h2>More works</h2>
     </div>
 
-    <section class="moreWorksContainer ">
+    <section id="works" class="moreWorksContainer ">
       <div class="two_columns">
         <div class="workItem">
           <a href="bankingconcept.html"><img src="img/bankappconcept_thumb.webp">
@@ -240,6 +238,28 @@
 
   <footer></footer>
   <script type="module" src="/main.js"></script>
+  <script>
+
+    const sections = document.querySelectorAll("main > section");
+    const navLi = document.querySelectorAll("nav a");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLi.forEach((li) => {
+        li.classList.remove("active");
+        if (li.classList.contains(current)) {
+          li.classList.add("active");
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
