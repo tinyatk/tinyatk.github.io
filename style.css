@@ -413,7 +413,7 @@ position: relative;
 /* CASE STUDY SECTION */
 
 .caseStudyItem {
-    border: solid 1px #E1E9F0;
+
     background: linear-gradient(135deg, #f5f9ff 0%, #ffffff 100%);
     align-items: center;
     padding: 0rem 4rem 0 4rem;
