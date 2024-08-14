@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex">
+
+  <title>Fintech Product Designer - Tin Yat Kwok Portfolio</title>
+  <meta property="og:title" content="Tin Yat Kwok Portfolio" />
+  <meta name="description" content="UX designer based in Hong Kong" />
+  <meta property="og:url" content="https://tinyatk.com/" />
+  <meta property="og:image" itemprop="image" content="https://tinyatk.com/img/ogimage.jpg" />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="reset.css">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+
+    /*.img {
+      display: block;
+      margin: auto;
+      width: min(1200px, 100%);
+      position: relative;
+      z-index: 1;
+      filter: blur(0px);
+    }*/
+
+    main {
+      --max-width: 1000px;
+      --container-padding: 1rem;
+      width: min(var(--max-width), 100% - (var(--container-padding) * 2));
+      margin-inline: auto;
+      position: relative;
+      z-index: 0;
+    }
+
+    .workItem {
+      background-color: #fff;
+      border: solid 1px #E1E9F0;
+      padding: 0.6rem 0.6rem 1.2rem 0.6rem;
+      display: block;
+      border-radius: 2rem;
+      text-decoration: none;
+    }
+
+    .workItem a {}
+
+    .two_columns {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 3em;
+    }
+
+    .two_columns>div {
+      flex-basis: 50%;
+    }
+
+
+
+    @media (max-width: 50em) {
+      .two_columns {
+        display: block;
+      }
+    }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWH3XB9HW7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-JWH3XB9HW7');
+  </script>
+</head>
+
+<body style="">
+  <main>
+    <section>
+      <img class="img" src="img/hiking1.webp">
+      <img class="img" src="img/hiking2.webp">
+      <img class="img" src="img/hiking3.webp">
+      <img class="img" src="img/hiking4.webp">
+    </section>
+
+    <section class="" style="margin-top: 3rem;">
+
+
+      <h2>The design process</h2>
+      <div class="two_columns">
+        <div class="workItem">
+          <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/HQr6ZIaS1ic?si=1LO36-R3v6nDpjRW"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+          <iframe style="width:100%; height: 100%;" src="https://www.youtube.com/embed/HQr6ZIaS1ic?si=1LO36-R3v6nDpjRW"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        </div>
+        <a href="https://invis.io/E2COURAYV#/244786689_Login_Screen" class="workItem">
+
+          <img src="img/hikeprototype.webp">
+          <span class="workLabel">Clickable prototype</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+</body>
+
+</html>
