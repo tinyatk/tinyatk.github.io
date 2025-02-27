@@ -106,7 +106,7 @@ h1 {
     background: radial-gradient(
         circle at 100%,
         #002B68,
-        #000A62 50%,
+        #4A4E77 50%,
         #1D0060 75%,
         #00305C 75%
       );
@@ -290,6 +290,9 @@ nav li a.active
     .videoFrame
     {
         width: 80%;
+        border: 0.3rem solid #222222;
+    outline: 0.09rem solid #aaaaaa;
+    border-radius: 2rem;
     }
 
 }
