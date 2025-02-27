@@ -263,9 +263,11 @@ nav li a.active
 }
 
 .videoFrame {
-    border:  min(1vmin, 1rem) solid #222222;
-    outline:  0.3vmin solid #aaaaaa;
-    border-radius: 5vmin;
+    /*border:  min(1vmin, 1rem) solid #222222;
+    outline:  0.3vmin solid #aaaaaa;*/
+    border:  0.45rem solid #222222;
+    outline:  0.15rem solid #aaaaaa;
+    border-radius: 5.2vmin;
     /*margin: 0px auto 0 auto;*/
     padding: 0;
     position: relative;
