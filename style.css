@@ -101,20 +101,22 @@ h1 {
     font-size: var(--size-700);
     margin: 1rem 0;
     line-height: 120%;
-    font-weight:600;
+
+
     background: radial-gradient(
         circle at 100%,
-        #005960,
-        #140068 50%,
-        #540046 75%,
-        #29004E 75%
+        #002B68,
+        #000A62 50%,
+        #1D0060 75%,
+        #00305C 75%
       );
-      font-weight: 600;
+      font-weight:500;
       background-size: 200% auto;
       color: #000;
       background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: animatedTextGradient 10s linear infinite;
+
 }
 @keyframes animatedTextGradient {
     to {
