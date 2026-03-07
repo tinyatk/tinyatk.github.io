@@ -1,65 +1,451 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex">
-  
-  <title>Fintech Product Designer - Tin Yat Kwok Portfolio</title>
-  <meta property="og:title" content="Tin Yat Kwok Portfolio" />
-  <meta name="description" content="UX designer based in Hong Kong" />
-  <meta property="og:url" content="https://tinyatk.com/" />
-  <meta property="og:image" itemprop="image" content="https://tinyatk.com/img/ogimage.jpg" />
-  <meta property="og:type" content="website" />
-
-  <link rel="stylesheet" href="reset.css">
-    <meta name="robots" content="noindex">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UX Case Study: Mobile Banking App</title>
   <style>
-    body,
-    html {
-      height: 100%;
+    /* Base Reset & Typography */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #f2f2f2;
     }
 
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background-color: #ffffff;
+      padding-bottom: 80px;
+    }
 
-    .img {
+    /* Layout Containers */
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* Image Placeholder Styling */
+    .img-placeholder {
+      width: 100%;
+      /*background-color: #f4f4f4;
+            border: 2px dashed #ccc;
+            border-radius: 12px;*/
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-weight: 500;
+      margin: 30px 0;
+      /*min-height: 400px;  Adjust based on your screenshot height */
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Actual Images (when you add them) */
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
       display: block;
       margin: auto;
-      width: min(1200px, 100%);
-      position: relative;
-      z-index: 1;
-      filter: blur(0px);
+    }
+
+    figcaption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: -20px;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+
+    /* Hero Area */
+    .hero {
+      padding: 100px 0 60px 0;
+     /*background-color: #fafafa;*/
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #444;
+      max-width: 650px;
+      margin: 0 auto 40px auto;
+    }
+
+    /* Hero Image Placeholder */
+    .hero-img-box {
+      min-height: 20px;
+     /* background-color: #e9e9e9;*/
+    }
+    .hero img {
+      width: 60%;
+    }
+
+    /* Quick Info Bar */
+    .meta-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 40px;
+      justify-content: center;
+      border-top: 1px solid #eee;
+      padding-top: 30px;
+    }
+
+    .meta-item h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #888;
+      margin-bottom: 5px;
+    }
+
+    /* Content Elements */
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 1.15rem;
+      color: #333;
+    }
+
+    ul {
+      margin-bottom: 25px;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .img-placeholder {
+        min-height: 300px;
+      }
+
+      .meta-info {
+        gap: 20px;
+        text-align: left;
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .meta-info {
+        flex-direction: column;
+      }
+
+      .container {
+        width: 92%;
+      }
+    }
+
+
+    /* Logo Styling */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+      /* Space between logo and Headline */
+    }
+
+    .logo-placeholder {
+      width: 72px;
+      /* The "Sweet Spot" size */
+      height: 72px;
+
+      border-radius: 16px;
+      /* Standard iOS-style squirrel/rounded corner */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 0.7rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      /* Subtle depth */
+    }
+
+    /* Mobile adjustment for Logo */
+    @media (max-width: 480px) {
+      .logo-placeholder {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+      }
     }
   </style>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWH3XB9HW7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JWH3XB9HW7');
-</script>
 </head>
 
-<body style="">
-  <!--<div id="blurbg"></div>-->
-  <img class="img" src="img/aop1.webp">
-  <img class="img" src="img/aop2.webp">
-  <img class="img" src="img/aop3.webp">
-  <img class="img" src="img/aop4.webp">
-  <img class="img" src="img/aop5.webp">
-  <img class="img" src="img/aop6.webp">
-  <img class="img" src="img/aop7.webp">
-  <img class="img" src="img/aop8.webp">
-  <img class="img" src="img/aop9.webp">
-  <img class="img" src="img/aop10.webp">
+<body>
+
+  <header class="hero">
+    <div class="container">
+      <div class="logo-container">
+        <div class="logo-placeholder">
+          <img src="img/aop/b0capplogo.webp">
+        </div>
+      </div>
+      <h1>Account Opening Re-design</h1>
+      <p>Redesigning Account Opening experience for BOCHK banking app</p>
+
+      <div class="hero-img-box">
+        <img src="img/aop/hero.webp">
+      </div>
+
+      <div class="meta-info">
+        <div class="meta-item">
+          <h4>Timeline</h4>
+          <p>8 Weeks (2024)</p>
+        </div>
+        <div class="meta-item">
+          <h4>My Role</h4>
+          <p>Lead UX/UI Designer</p>
+        </div>
+        <div class="meta-item">
+          <h4>Project Type</h4>
+          <p>Mobile App (iOS/Android)</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="introduction">
+    <div class="container">
+      <h2>Introduction</h2>
+      <p>The BOCHK Banking App is a comprehensive mobile banking solution. It offers a wide range of services including
+        account opening, wealth management, investment, and spending, all in one app. With just a HKID card and address,
+        you can open an account without visiting a branch. </p>
+
+
+
+    </div>
+  </section>
+
+
+  <section id="introduction">
+    <div class="container">
+
+      <h2>Final delivery - at a glance</h2>
+      <div class="img-placeholder">
+        <img src="img/aop/img1.webp">
+      </div>
+      <figcaption>Analysis of current market competitors and user pain points.</figcaption>
+
+      <div class="img-placeholder">
+        <img src="img/aop/img2.webp">
+      </div>
+      <figcaption>Analysis of current market competitors and user pain points.</figcaption>
+
+
+    </div>
+  </section>
+
+  <section id="role">
+    <div class="container">
+      <h2>My Role</h2>
+      <p>I'm the lead product designer for this project. I collaborated with Business Analysts, Product Managers, and IT
+        developers throughout this project.</p>
+      <div class="img-placeholder">
+        <img src="img/aop/role.webp">
+      </div>
+    </div>
+  </section>
+
+  <section id="problem">
+    <div class="container">
+      <h2>Goal: increase conversion rate, reduce dropoffs</h2>
+      <p>The goal is to streamline the account opening process, and reduce dropoff for each steps, thus increase the
+        overall conversion rate</p>
+      <ul>
+        <li><strong>Efficiency:</strong> To complete the entire identity verification and account setup process in under five minutes without needing to visit a physical branch.</li>
+        <li><strong>Clarity:</strong>Expects clear, real-time feedback on their application status to eliminate any uncertainty regarding document approval or next steps.</li>
+        <li><strong>High tech:</strong>Applicants seek a frictionless data-entry experience that utilizes auto-fill and OCR technology to minimize manual typing and potential errors
+        </li>
+      </ul>
+      <div class="img-placeholder">
+        <img src="img/aop/goalchart.webp">
+      </div>
+      <figcaption>Current dropoff, and projection after improvement.</figcaption>
+    </div>
+  </section>
+
+
+
+  <section id="problems">
+    <div class="container">
+
+
+
+      <h2>Problem 1: Navigation is confusing</h2>
+      <p>Texts used in the account opening are confusing to customers, choices are often conflicting, with no clear sight what to expect next.</p>
+
+      <div class="img-placeholder">
+        <img src="img/aop/prob1.webp">
+      </div>
+      <figcaption>The figure shows a convoluted navigation a customer faces when opening an account</figcaption>
+
+
+      <h2>Problem 2: Low motivation: It's unclear what the benefits are for customers to open an account </h2>
+      <p>The application process did not discuss what the benefits are for opening an account, while the competitors provide concise and easy-to-read texts for customers to understand what the benefits are.</p>
+
+      <div class="img-placeholder">
+        <img src="img/aop/prob2.webp">
+      </div>
+      <figcaption>A comparison of the problematic design, against major competitors</figcaption>
+
+
+      <h2>Problem 3:  Overwhelming - many input fields are condensed into a single page</h2>
+      <p>Some pages in the account opening form are extremely long, this makes the application form difficult to complete for the customers. Validation errors are difficult to be spot since the content is so overwhelming, it is hard to pick out individual errors.</p>
+
+      <div class="img-placeholder">
+        <img src="img/aop/prob3.webp">
+      </div>
+      <figcaption>Customers were asked to input lots of personal info in one single page</figcaption>
+
+
+      <h2>Problem 4: Customer dropoffs - Facial recognition screen is poorly designed</h2>
+      <p>During the account opening process customers are asked to scan their faces. The facial recognition screen is poorly designed. For compliance reasons, this step is required to complete in less than 7 seconds. Customers will have to grasp large amount of instructions in a short time. There is also a count down clock which put pressure onto the customer.</p>
+
+      <div class="img-placeholder">
+        <img src="img/aop/prob4.webp" style="width:70%">
+      </div>
+      <figcaption>Unclear screen instructions</figcaption>
+
+
+      <h2>Problem 5: Convoluted interactions - Address search is not intuitive</h2>
+      <p>Customers are asked to complete their home address. To assist customers enter their address, there is a address search function. However the function is poorly designed, customers will often have to jump between an inline search box and an overlay window, which can be inconvenient to customers.</p>
+
+      <div class="img-placeholder">
+        <img src="img/aop/prob5.webp">
+      </div>
+      <figcaption>Convoluted interactions - Address search is not intuitive</figcaption>
+
+    </div>
+  </section>
+
+
+
+
+  <section id="solutions">
+    <div class="container">
+      <h2>Rework journey </h2>
+      <p>The journey is being reworked to address these different business needs</p>
+      <div class="img-placeholder">
+        <img src="img/aop/flowchart.webp">
+      </div>
+
+      <h2>Solution 1 : Improve navigation and copywriting</h2>
+      <p>The previously discovered navigation issues were resolved by reworking the button labels, "contrasting options" are presented to aid customer's selections.</p>
+      <div class="img-placeholder">
+        <img src="img/aop/soln1.webp" style="width:70%">
+      </div>
+
+      <h2>Solution 2 : Adding an introduction page</h2>
+      <p>An intro page is added to describe to the customer what sort of benefits are offered to the customer. I worked with an illustrator to create these drawings.</p>
+      <div class="img-placeholder">
+        <img src="img/aop/soln2.webp" style="width:70%">
+      </div>
+
+      <h2>Solution 3 : Provide additional help for Mainland customers</h2>
+      <p>Customers from mainland China requires additional documents to open their accounts, the required documents are listed early in the user journey.</p>
+      <div class="img-placeholder">
+        <img src="img/aop/soln3.webp" style="width:70%">
+      </div>
+
+
+      <h2>Solution 4: Rework journey </h2>
+      <p>The journey is being reworked to address these different business needs</p>
+      <div class="img-placeholder">
+        <img src="img/aop/soln4.webp">
+      </div>
+
+
+      <h2>Solution 5: Tell customers what the benefits are for opening an account</h2>
+      <p>Provide information of each tier services to the customer</p>
+      <div class="img-placeholder">
+        <img src="img/aop/soln5.webp">
+      </div>
+
+
+      <h2>Solution 6: Improved facial recognition experience</h2>
+      <p>Facial recognition step is being reworked, with clear and on-screen instructions</p>
+      <div class="img-placeholder">
+        <img src="img/aop/soln6.webp">
+      </div>
+
+
+      <h2>Solution 7: Improve the address search function</h2>
+      <p>The address search function is enhanced with advanced search and clearly organized into different regions</p>
+      <div class="img-placeholder">
+        <img src="img/aop/soln7.webp" style="width:70%">
+      </div>
+
+
+      <h2>Solution : Rework journey </h2>
+      <p>The journey is being reworked to address these different business needs</p>
+      <div class="img-placeholder">
+        <img src="img/aop/flowchart.webp">
+      </div>
+
+
+
+
+    </div>
+  </section>
+
+
+  <section id="final">
+    <div class="container">
+      <h2>Final result</h2>
+      <p>100+ finalised screens were delivered in the end. For bank projects, various stake holders including the platform owner, product managers, compliance, and IT have to agree on the solution. Excellent communication were maintained between these parties throughout the project.</p>
+      <div class="img-placeholder">
+        <img src="img/aop/final.webp">
+      </div>
+
+      <h2>Bug fixes</h2>
+      <p>For a project of this scale, even though we have already fixed plenty of bugs before public release, there are bound to be minor bugs.</p>
+
+      <h2>Post-launch optimization</h2>
+      <p>This is a crucial next step for every UX improvement or product launch. With informed, actionable insights, we are able to design a better experience for our consumers.</p>
+
+      <h2>Continue to design better experiences</h2>
+      <p>To follow through our product roadmap and continue to stick to our design principles.</p>
+
+    </div>
+  </section>
 
 </body>
 
