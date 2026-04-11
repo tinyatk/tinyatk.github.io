@@ -1,335 +1,491 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-
-  <title>Fintech Product Designer - Tin Yat Kwok Portfolio</title>
-  <meta property="og:title" content="Tin Yat Kwok Portfolio" />
-  <meta name="description" content="Fintech Product Designer based in Hong Kong" />
-  <meta property="og:url" content="https://tinyatk.com/" />
-  <meta property="og:image" itemprop="image" content="https://tinyatk.com/img/ogimage.jpg" />
-  <meta property="og:type" content="website" />
-  <meta name="robots" content="noindex">
-
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="style.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWH3XB9HW7"></script>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tin Yat Kwok | Senior UX Designer — Concepts to Shipped Products</title>
+<meta name="description" content="Senior UX Designer with 16 years turning ideas into launched products. End-to-end delivery for teams that ship.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
 </head>
-
 <body>
+<nav class="nav" aria-label="Main navigation">
+<div class="nav-container">
+<a href="./index.html" class="nav-logo">
+<img src="assets/images/logo.svg" alt="TYK" width="40" height="30">
+</a>
+    <ul class="nav-links">
+      <li><a href="#" class="nav-link">Home</a></li>
+      <li><a href="#work" class="nav-link active">Work</a></li>
+      <li><a href="#process" class="nav-link">Process</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+</div>
+</nav>
 
-  <main>
-    <nav>
-      <div class="navWrapper">
-        <div class="logo"><img src="img/logo.svg"></div>
-        <ul>
-          <li><a href="#top" class="top">Home</a></li>
-          <li><a href="#skills" class="skills">Skills</a></li>
-          <li><a href="#casestudy" class="casestudy">Case study</a></li>
-          <li><a href="#works" class="works">Works</a></li>
-          <li><a href="#about" class="about">About</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <section id="top">
-      <section class="hero">
-        <h1>Fintech Product <span>Designer</span></h1>
-        <p>Specialized in banking & finance digital projects</p>
-        <a href="#" class="button large" onclick="return confirm('You may find the email address from my resume');">Contact</a>
-      </section>
-
-      <section class="herobg">
-        <img id="phoneLeft" src="img/hero_phone1.webp">
-        <video class="videoFrame" controls playsinline loop autoplay muted>
-          <source src="img/db_reimagined_compressed.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <img id="phoneRight" src="img/hero_phone2.webp">
-      </section>
-
-      <section class="previousCompany">
-        <p>Developing digital platforms for corporations since 2007</p>
-        <div class="logos">
-          <img src="img/boc.svg">
-          <img src="img/hsb.svg">
-          <img src="img/1bm.svg">
-          <img src="img/ob.webp">
-        </div>
-      </section>
-    </section>
-    <section id="skills" xclass="skills">
-      <div class="bigTitle">
-        <img class="titleIcon" src="img/skills_icon.svg">
-        <h2>Elevate your digital product to the next level</h2>
-      </div>
-      <div class="skillItem two_columns">
-        <div class="skillImg">
-          <img class="" src="img/skill1.svg">
-        </div>
-        <div class="skillContent">
-          <div class="tag">15+ year experience</div>
-          <h3>UI/UX design</h3>
-          <div class="skillpoints">
-            <ul>
-              <li class="point1">I craft intuitive interfaces and cohesive user experiences. </li>
-              <li class="point2">UI aesthetics and functionality are balanced , ensuring seamless navigation and
-                accessibility. </li>
-              <li class="point3">By empathizing with users, they create designs that are not only visually appealing but
-                also
-                user-friendly, enhancing overall satisfaction and engagement.</li>
-            </ul>
+<!-- HERO: End-to-End Delivery -->
+<header class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="hero-text">
+<div class="open-for-work option-2"><span class="status-glow"></span>Open for new opportunities</div>
+<h1 class="hero-title">Tin Yat Kwok</h1>
+<p class="hero-subtitle">Senior UX Designer with 16 years turning ideas into launched products.</p>
+<p class="hero-description">From concept sketches to production code, I design experiences that ship. Specialized in bringing clarity to messy requirements—regulatory constraints, legacy systems, and competing stakeholder needs included.</p>
+<div class="hero-actions">
+<a href="#work" class="btn btn--primary">See the work</a>
+</div>
+<div class="hero-credibility">
+<div class="hero-cred-item">
+<div class="hero-cred-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+</div>
+<span class="hero-cred-text">16+ years shipping</span>
+</div>
+<div class="hero-cred-item">
+<div class="hero-cred-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+</div>
+<span class="hero-cred-text">End-to-end delivery</span>
+</div>
+<div class="hero-cred-item">
+<div class="hero-cred-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+</div>
+<span class="hero-cred-text">Millions of users</span>
+</div>
+<div class="hero-cred-item">
+<div class="hero-cred-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+</div>
+<span class="hero-cred-text">10+ shipped products</span>
+</div>
+</div>
+</div>
+<div class="hero-image">
+        <div id="hero-parallax-container" class="hero-parallax"></div>
           </div>
-        </div>
-      </div>
+</div>
+</div>
+</header>
 
-      <div class="skillItem two_columns">
-        <div class="skillImg">
-          <img class="" src="img/skill2.svg">
-        </div>
-        <div class="skillContent minusOrder">
-          <div class="tag">10+ year experience</div>
-          <h3>Collaborate with stake holders</h3>
-          <div class="skillpoints">
-            <ul>
-              <li class="point4">Collaborate closely with product owners, developers, and business analysts to ensure
-                design aligns with
-                business goals, technical constraints, and user needs.</li>
-              <li class="point5">Daily interactions often involve workshops, design reviews, and iterative feedback
-                sessions to refine
-                product features and enhance user experience.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+<!-- LOGO STRIP: Previous Companies -->
+<section class="logo-strip anim-logo-strip">
+<div class="container">
+<div class="logo-strip-logos">
+<img src="assets/images/logo-boc.svg" alt="Bank of China" class="logo-item anim-logo-item">
+<img src="assets/images/logo-hsbc.svg" alt="HSBC" class="logo-item anim-logo-item">
+<img src="assets/images/logo-ibm.svg" alt="IBM" class="logo-item anim-logo-item">
+<img src="assets/images/logo-outblaze.webp" alt="Outblaze" class="logo-item anim-logo-item">
+</div>
+</div>
+</section>
 
-      <!--<section class="accomplishmentsContainer two_columns">
-        <div class="accomplishment">
-          <img class="" src="img/grow_platform.svg">
-          <h3>Grow your platform</h3>
-          <p>Exceptional user experience drives customer retention and referrals, catalyzing robust business expansion.
-          </p>
-        </div>
-        <div class="accomplishment">
-          <img class="" src="img/maphk.svg">
-          <h3>Serving over 3 million users</h3>
-          <p>Developed applications that reached 3 million users
-          </p>
-        </div>
-      </section>-->
+<!-- WHY WORK WITH ME: End-to-End Value -->
+<section class="why-work anim-why-work">
+<div class="container">
+<header class="section-header">
+<p class="section-kicker">Why work with me</p>
+<h2 class="section-title">From concept to production</h2>
+<p class="section-description">Hire a designer who understands what it takes to ship—beyond the mockups.</p>
+</header>
 
-    </section>
+<div class="value-props">
+<div class="value-prop">
+<div class="value-prop-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+</div>
+<div class="value-prop-content">
+<h3 class="value-prop-title">Ship-ready designs</h3>
+<p class="value-prop-desc">Annotated specs, edge cases documented, and developer handoff that actually works.</p>
+</div>
+</div>
 
+<div class="value-prop">
+<div class="value-prop-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>
+</div>
+<div class="value-prop-content">
+<h3 class="value-prop-title">Cross-functional alignment</h3>
+<p class="value-prop-desc">I bring product, engineering, and stakeholders along—design reviews that build consensus.</p>
+</div>
+</div>
 
+<div class="value-prop">
+<div class="value-prop-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+</div>
+<div class="value-prop-content">
+<h3 class="value-prop-title">Real-world constraints</h3>
+<p class="value-prop-desc">Legacy systems, compliance needs, technical debt—I design with reality in mind.</p>
+</div>
+</div>
 
-    <section id="casestudy" class="caseStudyContainer">
+<div class="value-prop">
+<div class="value-prop-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+</div>
+<div class="value-prop-content">
+<h3 class="value-prop-title">Validated decisions</h3>
+<p class="value-prop-desc">Every major design backed by testing, metrics, or pilot data—not just intuition.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-      <div class="bigTitle">
-        <img class="titleIcon" src="img/casestudy_icon.svg">
-        <h2>Case Study</h2>
-      </div>
+<!-- SHIPPED WORK: Case Studies -->
+<section class="featured-case-studies anim-case-studies" id="work">
+<!-- Backward compatibility anchor -->
+<div id="featured-work"></div>
+<div class="container">
+<header class="section-header">
+<p class="section-kicker">Shipped Work</p>
+<h2 class="section-title">Ideas that became products</h2>
+<p class="section-description">Three projects demonstrating end-to-end delivery—from early concepts to launched features used by millions.</p>
+</header>
 
-      <a class="caseStudyLink" href="aop.html">
-        <div class="caseStudyItem two_columns caseStudyAltBg">
-          <div class="caseStudyImage"><img class="caseImg" src="img/casestudy1.webp">
-          </div>
-          <div class="casestudyContent minusOrder">
-            <img class="appIcon" src="img/bocapp_icon.svg">
-            <h3>Bank Account Opening</h3>
-            <p class="subtitle">UI/UX DESIGN &#8226; 2022</p>
-            <p>Redesigning the account opening experience for the BOCHK app</p>
-            <span class="button small">Read the case study →</span>
-          </div>
-        </div>
+<div class="case-studies-grid">
+<!-- Case Study 1 -->
+<article class="case-study-card anim-case-study-card">
+<a href="./case-study-aop.html" class="case-study-link">
+<div class="case-study-image">
+<img src="assets/images/casestudy1.webp" alt="Bank Account Opening shipped product" loading="lazy">
+</div>
+<div class="case-study-content">
+<div class="case-study-client">
+<img src="assets/images/bocapp_icon.svg" alt="BOCHK">
+<span>BOCHK</span>
+</div>
+<h3 class="case-study-title">Bank Account Opening</h3>
+<p class="case-study-summary">Redesigned identity verification flows that boosted completion rates 24% while maintaining full compliance. Live for 2.3M users.</p>
+            <span class="btn btn--primary case-study-btn">View case study →</span>
+            <div class="case-study-impact">
+<div class="case-study-impact-item">
+<strong>+24%</strong>
+<span>Completion</span>
+</div>
+<div class="case-study-impact-item">
+<strong>Live</strong>
+<span>In production</span>
+</div>
+</div>
+</div>
       </a>
+</article>
 
-      <a class="caseStudyLink" href="stocktrading.html">
-        <div class="caseStudyItem two_columns">
-          <div class="caseStudyImage"><img class="caseImg" src="img/casestudy3.webp">
-          </div>
-          <div class="casestudyContent minusOrder">
-            <img class="appIcon" src="img/bocapp_icon.svg">
-            <h3>Stock Trading</h3>
-            <p class="subtitle">UI/UX DESIGN &#8226; 2025</p>
-            <p>Redesigning the Stock Trading experience for the BOCHK app</p>
-            <span class="button small">Read the case study →</span>
-          </div>
-        </div>
+<!-- Case Study 2 -->
+<article class="case-study-card anim-case-study-card">
+<a href="./case-study-stocktrading.html" class="case-study-link">
+<div class="case-study-image">
+<img src="assets/images/casestudy3.webp" alt="Stock Trading shipped product" loading="lazy">
+</div>
+<div class="case-study-content">
+<div class="case-study-client">
+<img src="assets/images/bocapp_icon.svg" alt="BOCHK">
+<span>BOCHK</span>
+</div>
+<h3 class="case-study-title">Stock Trading Experience</h3>
+<p class="case-study-summary">Rebuilt trading for retail investors with real-time risk warnings. Reduced support tickets by 47% through clearer disclosure flows.</p>
+            <span class="btn btn--primary case-study-btn">View case study →</span>
+            <div class="case-study-impact">
+<div class="case-study-impact-item">
+<strong>-47%</strong>
+<span>Support tickets</span>
+</div>
+<div class="case-study-impact-item">
+<strong>24/7</strong>
+<span>U.S. markets</span>
+</div>
+</div>
+</div>
       </a>
+</article>
 
-      
-
-      <!--<a class="caseStudyLink" href="ploan.html">
-        <div class="caseStudyItem two_columns">
-          <div class="caseStudyImage"><img class="caseImg" src="img/casestudy2.webp">
-          </div>
-          <div class="casestudyConten minusOrder">
-            <img class="appIcon" src="img/bocapp_icon.svg">
-            <h3>Personal Loan Application</h3>
-            <p class="subtitle">UI/UX DESIGN &#8226; 2021</p>
-            <p>Redesigning the loan experience for the BOCHK app</p>
-            <span href="ploan.html" class="button small">Read the case study →</span>
-          </div>
-        </div>
-      </a>-->
-
-      <a class="caseStudyLink" href="wealthmgt.html">
-        <div class="caseStudyItem two_columns caseStudyAltBg">
-          <div class="caseStudyImage"><img class="caseImg" src="img/wealthmgtthumb.webp">
-          </div>
-          <div class="casestudyConten minusOrder">
-            <img class="appIcon" src="img/hsb_app.svg">
-            <h3>HSBC Wealth Management</h3>
-            <p class="subtitle">UI/UX DESIGN &#8226; 2017</p>
-            <p>Designing the wealth management experience for HSBC</p>
-            <span href="ploan.html" class="button small">Read the case study →</span>
-          </div>
-        </div>
+<!-- Case Study 3 -->
+<article class="case-study-card anim-case-study-card">
+<a href="./case-study-wealthmgt.html" class="case-study-link">
+<div class="case-study-image">
+<img src="assets/images/wealthmgtthumb.webp" alt="Wealth Management shipped product" loading="lazy">
+</div>
+<div class="case-study-content">
+<div class="case-study-client">
+<img src="assets/images/hsb_app.svg" alt="HSBC">
+<span>HSBC</span>
+</div>
+<h3 class="case-study-title">HSBC Wealth Management</h3>
+<p class="case-study-summary">Designed for high-net-worth clients where every interaction balances service with transparency. Still in use 8 years later.</p>
+            <span class="btn btn--primary case-study-btn">View case study →</span>
+            <div class="case-study-impact">
+<div class="case-study-impact-item">
+<strong>4.2/5</strong>
+<span>Client rating</span>
+</div>
+<div class="case-study-impact-item">
+<strong>8 yrs</strong>
+<span>In production</span>
+</div>
+</div>
+</div>
       </a>
+</article>
+</div>
+</div>
+</section>
 
-    </section>
+<!-- SELECTED WORK: Additional Projects -->
+<section id="selected-work" class="selected-work anim-selected-work">
+<div class="container">
+<header class="section-header">
+<p class="section-kicker">More Work</p>
+<h2 class="section-title">Selected Work</h2>
+<p class="section-description">Additional projects demonstrating range across products and platforms.</p>
+</header>
 
-    <div class="bigTitle">
-      <img class="titleIcon" src="img/moreworks_icon.svg">
-      <h2>More works</h2>
-    </div>
+<div class="work-gallery">
+<article class="work-card anim-work-card">
+<a href="./work-banking-concept.html">
+<div class="work-image">
+<img src="assets/images/bankappconcept_thumb.webp" alt="Banking App Concept" loading="lazy">
+</div>
+<div class="work-content">
+<h3 class="work-title">Banking App Concept</h3>
+<p class="work-summary">A conceptual banking app design exploring modern mobile banking interactions.</p>
+<span class="work-tag">Concept</span>
+</div>
+</a>
+</article>
 
-    <section id="works" class="moreWorksContainer ">
-      <div class="two_columns">
-        <div class="workItem">
-          <a href="bankingconcept.html"><img src="img/bankappconcept_thumb.webp">
-            <span class="workLabel">Banking App Concept</span>
-          </a>
-        </div>
+<article class="work-card anim-work-card">
+<a href="./work-funds-trading.html">
+<div class="work-image">
+<img src="assets/images/funds_thumb.webp" alt="Funds Trading" loading="lazy">
+</div>
+<div class="work-content">
+<h3 class="work-title">Funds Trading</h3>
+<p class="work-summary">Investment fund trading interface with portfolio management features.</p>
+<span class="work-tag">Investment</span>
+</div>
+</a>
+</article>
 
-        
-       <div class="workItem">
-          <a href="img/fun_full.png"><img src="img/funds_thumb.webp">
-            <span class="workLabel">Funds trading</span>
-          </a>
-        </div>
-      </div>
+<article class="work-card anim-work-card">
+<a href="./work-credit-card.html">
+<div class="work-image">
+<img src="assets/images/creditcard_thumb.webp" alt="Credit Card" loading="lazy">
+</div>
+<div class="work-content">
+<h3 class="work-title">Credit Card 信用卡</h3>
+<p class="work-summary">Credit card application and management experience design.</p>
+<span class="work-tag">Banking</span>
+</div>
+</a>
+</article>
 
-      <div class="two_columns">
-        <div class="workItem">
-          <a href="img/creditc_large.jpg"><img src="img/creditcard_thumb.webp">
-            <span class="workLabel">Credit Card 信用卡</span>
-          </a>
-        </div>
-       <div class="workItem">
-          <a href="hiking.html"><img src="img/hiking_thumb.webp">
-            <span class="workLabel">Hiking App Concept</span>
-          </a>
-        </div> 
-       
-
-      </div>
-
-      
-<!--
-      <div class="two_columns">
-
-        <div class="workItem">
-          <a href="findhouse.html"><img src="img/findhouse_thumb.webp">
-            <span class="workLabel">FindHouse app concept</span>
-          </a>
-        </div>
-
-
-        <div class="workItem">
-          <a href="img/creditc_large.jpg"><img src="img/creditcard_thumb.webp">
-            <span class="workLabel">Credit Card 信用卡</span>
-          </a>
-        </div>
-
-
-
-      </div>
-
-      <div class="two_columns">
-        <div class="workItem">
-          <a href="img/domestichelper_large.jpg"><img src="img/domestichelper_thumb.webp">
-            <span class="workLabel">Domestic Helper Insurance 家傭保障</span>
-          </a>
-        </div>
-        <div class="workItem">
-          <a href="img/laisee_large.jpg"><img src="img/elaisee_thumb.webp">
-            <span class="workLabel">E-Lai See 派發電子利是</span>
-          </a>
-        </div>
-
-      </div>-->
+<article class="work-card anim-work-card">
+<a href="./work-hiking.html">
+<div class="work-image">
+<img src="assets/images/hiking_thumb.webp" alt="Hiking App Concept" loading="lazy">
+</div>
+<div class="work-content">
+<h3 class="work-title">Hiking App Concept</h3>
+<p class="work-summary">Outdoor adventure and hiking trail exploration app design.</p>
+<span class="work-tag">Lifestyle</span>
+</div>
+</a>
+</article>
+</div>
+</div>
+</section>
 
 
-    </section>
+<!-- RESULTS: Impact Delivered -->
+<section class="results-section anim-results" id="results">
+<div class="container">
+<header class="results-header">
+<p class="section-kicker">Impact</p>
+<h2 class="results-title">The work speaks in numbers</h2>
+<p class="results-subtitle">These metrics come from shipped products in production—real users, real outcomes.</p>
+</header>
+
+<div class="results-grid">
+<div class="result-card">
+<div class="result-value anim-counter" data-target="24" data-prefix="+">0</div>
+<div class="result-label">Account opening<br>completion rate</div>
+<div class="result-context">BOCHK, shipped</div>
+</div>
+<div class="result-card">
+<div class="result-value negative anim-counter" data-target="47" data-prefix="-">0</div>
+<div class="result-label">Trading support<br>tickets eliminated</div>
+<div class="result-context">BOCHK, shipped</div>
+</div>
+<div class="result-card">
+<div class="result-value anim-counter" data-target="4.2" data-decimals="1">0</div>
+<div class="result-label">Client satisfaction<br>score for HNW</div>
+<div class="result-context">HSBC, shipped</div>
+</div>
+<div class="result-card">
+<div class="result-value anim-counter" data-target="16" data-suffix="+">0</div>
+<div class="result-label">Years shipping<br>products</div>
+<div class="result-context">Still going</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- DELIVERY PROCESS: How I Ship -->
+<section class="delivery-process anim-process" id="process">
+<div class="container">
+<header class="process-header">
+<p class="section-kicker">How I Work</p>
+<h2 class="section-title">From concept to shipped product</h2>
+<p class="section-description">A repeatable process for turning ideas into live features—proven across 16 years and multiple industries.</p>
+</header>
+
+<div class="process-grid anim-process-grid"><div class="process-connector"></div>
+<div class="process-step anim-process-step active">
+<div class="process-step-number">1</div>
+<h3 class="process-step-title">Understand</h3>
+<p class="process-step-desc">User needs, business goals, technical constraints</p>
+</div>
+<div class="process-step">
+<div class="process-step-number">2</div>
+<h3 class="process-step-title">Define</h3>
+<p class="process-step-desc">Scope, success metrics, stakeholder alignment</p>
+</div>
+<div class="process-step">
+<div class="process-step-number">3</div>
+<h3 class="process-step-title">Design</h3>
+<p class="process-step-desc">Concepts, prototypes, iteration with feedback</p>
+</div>
+<div class="process-step">
+<div class="process-step-number">4</div>
+<h3 class="process-step-title">Validate</h3>
+<p class="process-step-desc">Usability testing, pilot metrics, stakeholder reviews</p>
+</div>
+<div class="process-step">
+<div class="process-step-number">5</div>
+<h3 class="process-step-title">Ship</h3>
+<p class="process-step-desc">Handoff, QA, launch, and post-release iteration</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CAPABILITIES: Domain Expertise -->
+<section class="capabilities anim-capabilities" id="expertise">
+<div class="container">
+<div class="capabilities-header">
+<div class="capabilities-intro">
+<p class="section-kicker">Capabilities</p>
+<h2>Built for scale</h2>
+<p>Across 16 years, I've developed skills that transfer across industries. Whether it's finance, healthcare, or consumer tech—the fundamentals of shipping hold.</p>
+</div>
+<div class="capability-note">
+<p>"Design is only successful when it ships. My job isn't done when the mockup looks good—it's done when users are successfully completing tasks in production."</p>
+</div>
+</div>
+
+<div class="capabilities-table">
+<div class="capability-row">
+<div class="capability-category anim-cap-category">Products</div>
+<div class="capability-list">Onboarding, core workflows, transaction flows, account management, platform features</div>
+</div>
+<div class="capability-row">
+<div class="capability-category anim-cap-category">Constraints</div>
+<div class="capability-list">Regulatory compliance, legacy system integration, accessibility requirements, localization</div>
+</div>
+<div class="capability-row">
+<div class="capability-category anim-cap-category">Platforms</div>
+<div class="capability-list">iOS/Android native, responsive web, hybrid apps, design systems at scale</div>
+</div>
+<div class="capability-row">
+<div class="capability-category anim-cap-category">Collaboration</div>
+<div class="capability-list">Product managers, engineers, legal/compliance, executives, multi-disciplinary teams</div>
+</div>
+<div class="capability-row">
+<div class="capability-category anim-cap-category">Delivery</div>
+<div class="capability-list">Research, testing, prototyping, design systems, handoff specs, post-launch iteration</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ABOUT: Personality -->
+<section class="about-section anim-about" id="about">
+<div class="container">
+<div class="about-grid">
+<div class="about-content-side">
+<p class="section-kicker">About</p>
+<h2>16 years of learning how products actually ship</h2>
+
+<p>I started as a visual designer and grew into UX leadership by shipping—again and again. Banks, trading platforms, startups. What I've learned: the best designers understand what happens <em>after</em> they hit "export."</p>
+
+<p><strong>Design is a means to an end.</strong> The end is a product in users' hands that solves their problem. Everything else—process, frameworks, awards—is noise if it doesn't ship.</p>
+
+<div class="about-quote">
+I design with implementation in mind. Not because I write code, but because I respect what it takes to build. That respect shapes every decision I make.
+</div>
+
+<p>I'm especially interested in products where trust matters—where a confused user isn't just annoyed, they're gone.</p>
+
+<p class="about-personal">Outside work, you'll find me hiking Hong Kong's trails—where there are no stakeholders, no deadlines, and the path always eventually leads somewhere.</p>
+</div>
+<div class="about-image-side">
+<img src="assets/images/portrait2.webp" alt="Tin Yat Kwok portrait">
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONTACT: Clear CTA -->
+<section class="contact-cta anim-contact" id="contact">
+<div class="container">
+<div class="contact-content">
+<h2 class="contact-title">Ready to ship something?</h2>
+<p class="contact-description">I'm open to senior UX opportunities where getting to launch matters as much as the design itself.</p>
+<div class="contact-actions">
+<a href="mailto:tinyatkwok@email.com" class="btn btn--primary">Email me</a>
+<a href="https://linkedin.com/in/tinyatkwok" target="_blank" rel="noopener" class="btn btn--secondary">View LinkedIn</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-info">
+<p class="footer-name">Tin Yat Kwok</p>
+<p class="footer-title">Senior UX Designer — End-to-End Delivery</p>
+</div>
+
+</div>
+<p class="footer-copyright">© 2026 Tin Yat Kwok. All rights reserved.</p>
+</div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
+  <script type="module">
+  import { initHeroParallax } from './assets/js/hero-parallax.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    initHeroParallax('#hero-parallax-container');
+  });
+</script>
 
 
-
-    <section id="about" class="aboutMeContainer two_columns">
-      <div class="aboutMeImage"><img class="" src="img/me.webp">
-      </div>
-      <div class="aboutMeContent">
-        <p class="tag">15+ year experience</p>
-        <h2>Tin Yat Kwok</h2>
-        <p class="location">Hong Kong</p>
-        <p>Driven by passion for design, I’ve dedicated 15 years to mastering UI/UX, with a foundation in interaction
-          design from university. My journey through banking and tech industries fuels my commitment to creating
-          meaningful, user-centered experiences.</p>
-      </div>
-    </section>
-
-
-    <section class="forHireContainer">
-      <div class="forHireImage">
-        <img class="" src="img/forhire.svg">
-      </div>
-      <div class="forHireContent">
-        <h2>Now available For hire</h2>
-        <p>Ready to bring your vision to life? Let’s collaborate and craft exceptional digital
-          experiences together</p>
-          <a href="#" class="button large" onclick="return confirm('You may find the email address from my resume');">Contact</a>
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <footer></footer>
-  <script type="module" src="/main.js"></script>
-  <script>
-
-    const sections = document.querySelectorAll("main > section");
-    const navLi = document.querySelectorAll("nav a");
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - sectionHeight / 3) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLi.forEach((li) => {
-        li.classList.remove("active");
-        if (li.classList.contains(current)) {
-          li.classList.add("active");
-        }
-      });
-    });
-  </script>
 </body>
-
 </html>
