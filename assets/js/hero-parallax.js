@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
+// Settings and image paths are relative to this script's location (assets/js/)
+
 const TONE_MAPS = [
   THREE.NoToneMapping,
   THREE.LinearToneMapping,
@@ -9,6 +11,45 @@ const TONE_MAPS = [
   THREE.ACESFilmicToneMapping
 ];
 
+const settings = {
+  dispScale: 1,
+  dispBias: -0.05,
+  segments: 256,
+  planeW: 1.6,
+  planeH: 2,
+  roughness: 0.85,
+  metalness: 0,
+  mapIntensity: 1,
+  wireframe: false,
+  doubleSide: false,
+  toneMapping: 4,
+  exposure: 1.2,
+  camZ: 2.5,
+  fov: 45,
+  orbitSpeed: 0.003,
+  autoRotate: false,
+  damping: true,
+  keyColor: '#fff4e0',
+  keyInt: 2.5,
+  keyX: 1.5,
+  keyY: 2,
+  keyZ: 2,
+  fillColor: '#c0d8ff',
+  fillInt: 0.8,
+  fillX: -2,
+  fillY: -1,
+  ambColor: '#ffffff',
+  ambInt: 0.4,
+  bgColor: '#080809',
+  fogEnabled: false,
+  fogDensity: 0.1,
+  rotX: 0,
+  rotY: 0,
+  rotZ: 0,
+  meshScale: 1.4,
+  invertDepth: true
+};
+
 export async function initHeroParallax(containerSelector) {
   const container = document.querySelector(containerSelector);
   if (!container) {
@@ -16,25 +57,30 @@ export async function initHeroParallax(containerSelector) {
     return;
   }
 
+  // Force container to have dimensions before creating renderer
+  const parentWidth = container.parentElement?.clientWidth || container.clientWidth || 420;
+  const parentHeight = container.parentElement?.clientHeight || container.clientHeight || parentWidth * 1.25;
+
+  // Set explicit styles on container
+  container.style.width = parentWidth + 'px';
+  container.style.height = parentHeight + 'px';
+  container.style.display = 'block';
+
   // Check for reduced motion preference
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Load settings
-  let settings = {};
-  try {
-    const response = await fetch('./settings.json');
-    if (response.ok) {
-      settings = await response.json();
-    }
-  } catch (e) {
-    console.warn('Could not load settings.json, using defaults');
-  }
-
   const s = (key, fallback) => key in settings ? settings[key] : fallback;
 
-  // Get container dimensions - use parent if height is zero
-  const width = container.clientWidth;
-  const height = container.clientHeight || container.parentElement.clientHeight || width * 1.25;
+  // Get container dimensions
+  const width = container.clientWidth || parentWidth;
+  const height = container.clientHeight || parentHeight;
+
+  if (!width || !height) {
+    console.error('Container has no dimensions:', width, height);
+    return;
+  }
+
+  console.log('Three.js hero parallax initializing with size:', width, 'x', height);
 
   // Renderer
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -44,6 +90,7 @@ export async function initHeroParallax(containerSelector) {
   renderer.toneMapping = TONE_MAPS[s('toneMapping', 4)] ?? THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = s('exposure', 1.2);
   container.appendChild(renderer.domElement);
+  console.log('Renderer created and appended to container');
 
   // Scene
   const scene = new THREE.Scene();
@@ -59,7 +106,7 @@ export async function initHeroParallax(containerSelector) {
   controls.dampingFactor = 0.05;
   controls.enableZoom = false;
   controls.enablePan = false;
-  controls.enableRotate = false; // Disable manual rotation - we control via mouse
+  controls.enableRotate = false;
 
   // Lights
   const keyLight = new THREE.DirectionalLight(s('keyColor', '#fff4e0'), s('keyInt', 2.5));
@@ -77,14 +124,15 @@ export async function initHeroParallax(containerSelector) {
   let colorTex, depthTex;
   try {
     [colorTex, depthTex] = await Promise.all([
-      loader.loadAsync('./color.webp'),
-      loader.loadAsync('./depth.webp')
+      loader.loadAsync('assets/images/color.webp'),
+      loader.loadAsync('assets/images/depth.webp')
     ]);
     colorTex.colorSpace = THREE.SRGBColorSpace;
+    console.log('Textures loaded successfully');
   } catch (e) {
     console.error('Failed to load textures:', e);
-    // Show fallback - original image
-    container.innerHTML = '<img src="assets/images/hero.png" alt="Tin Yat Kwok" style="width:100%;height:auto;">';
+    // Show fallback
+    container.innerHTML = '<img src="assets/images/hero.png" alt="Tin Yat Kwok" style="width:100%;height:auto;border-radius:var(--radius-xl);">';
     return;
   }
 
@@ -117,6 +165,11 @@ export async function initHeroParallax(containerSelector) {
   const sc = s('meshScale', 1);
   mesh.scale.set(sc, sc, sc);
   scene.add(mesh);
+  console.log('Mesh added to scene');
+
+  // Force initial render
+  renderer.render(scene, camera);
+  console.log('Initial render complete');
 
   // Mouse parallax
   const mouse = { x: 0, y: 0 };
@@ -139,9 +192,11 @@ export async function initHeroParallax(containerSelector) {
   const handleResize = () => {
     const newWidth = container.clientWidth;
     const newHeight = container.clientHeight;
-    camera.aspect = newWidth / newHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(newWidth, newHeight);
+    if (newWidth && newHeight) {
+      camera.aspect = newWidth / newHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(newWidth, newHeight);
+    }
   };
   window.addEventListener('resize', handleResize);
 
@@ -170,6 +225,7 @@ export async function initHeroParallax(containerSelector) {
     renderer.render(scene, camera);
   }
   animate();
+  console.log('Animation loop started');
 
   // Cleanup function
   return () => {

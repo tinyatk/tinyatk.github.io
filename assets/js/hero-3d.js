@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 // Hero 3D Parallax Portrait
-// Loads settings from ./settings.json and renders a 3D portrait with depth-based parallax
+// Settings and image paths are relative to this script's location (assets/js/)
 
 const TONE_MAPS = [
   THREE.NoToneMapping,
@@ -11,17 +11,53 @@ const TONE_MAPS = [
   THREE.ACESFilmicToneMapping
 ];
 
+const settings = {
+  dispScale: 2,
+  dispBias: -0.05,
+  segments: 256,
+  planeW: 1.6,
+  planeH: 2,
+  roughness: 0.85,
+  metalness: 0,
+  mapIntensity: 1,
+  wireframe: false,
+  doubleSide: false,
+  toneMapping: 4,
+  exposure: 1.2,
+  camZ: 2.5,
+  fov: 45,
+  orbitSpeed: 0.003,
+  autoRotate: false,
+  damping: true,
+  keyColor: '#fff4e0',
+  keyInt: 2.5,
+  keyX: 1.5,
+  keyY: 2,
+  keyZ: 2,
+  fillColor: '#c0d8ff',
+  fillInt: 0.8,
+  fillX: -2,
+  fillY: -1,
+  ambColor: '#ffffff',
+  ambInt: 0.4,
+  bgColor: '#080809',
+  fogEnabled: false,
+  fogDensity: 0.1,
+  rotX: 0,
+  rotY: 0,
+  rotZ: 0,
+  meshScale: 1.3,
+  invertDepth: true,
+  colorPath: '../images/color.webp',
+  depthPath: '../images/depth.webp'
+};
+
 export async function initHero3D(containerSelector = '#hero-3d-container') {
   const container = document.querySelector(containerSelector);
   if (!container) {
     console.warn('Hero 3D container not found:', containerSelector);
     return;
   }
-
-  // Load settings from external JSON
-  const settings = await fetch('./settings.json')
-    .then(r => r.json())
-    .catch(() => ({}));
 
   const s = (key, fallback) => key in settings ? settings[key] : fallback;
 
@@ -64,10 +100,18 @@ export async function initHero3D(containerSelector = '#hero-3d-container') {
   // Load textures and create mesh
   const loader = new THREE.TextureLoader();
 
+  // Declare variables at top level of try block
+  let colorTex, depthTex, geo, mat, mesh;
+
   try {
-    const [colorTex, depthTex] = await Promise.all([
-      loader.loadAsync('./color.png'),
-      loader.loadAsync('./depth.png')
+    // Get image paths from settings or use defaults (WebP format in assets folder)
+    // Paths are relative to the HTML page, not this JS file
+    const colorPath = s('colorPath', 'assets/images/color.webp');
+    const depthPath = s('depthPath', 'assets/images/depth.webp');
+
+    [colorTex, depthTex] = await Promise.all([
+      loader.loadAsync(colorPath),
+      loader.loadAsync(depthPath)
     ]);
 
     colorTex.colorSpace = THREE.SRGBColorSpace;
@@ -75,12 +119,20 @@ export async function initHero3D(containerSelector = '#hero-3d-container') {
     const dispScale = s('invertDepth', false) ? -s('dispScale', 0.18) : s('dispScale', 0.18);
     const segs = s('segments', 256);
 
-    // Plane geometry adjusted for portrait aspect ratio
-    const planeW = s('planeW', 1.6);
-    const planeH = s('planeH', 2.0);
-    const geo = new THREE.PlaneGeometry(planeW, planeH, segs, segs);
+    // Calculate plane geometry based on image aspect ratio
+    // This ensures the 3D model matches the original image proportions
+    const imageWidth = colorTex.image && colorTex.image.width ? colorTex.image.width : 768;
+    const imageHeight = colorTex.image && colorTex.image.height ? colorTex.image.height : 1370;
+    const imageAspect = imageWidth / imageHeight;
 
-    const mat = new THREE.MeshStandardMaterial({
+    // Base height determines the overall size; width is calculated from aspect ratio
+    const baseHeight = s('planeH', 2.0);
+    const planeW = baseHeight * imageAspect;
+    const planeH = baseHeight;
+
+    geo = new THREE.PlaneGeometry(planeW, planeH, segs, segs);
+
+    mat = new THREE.MeshStandardMaterial({
       map: colorTex,
       displacementMap: depthTex,
       displacementScale: dispScale,
@@ -93,7 +145,7 @@ export async function initHero3D(containerSelector = '#hero-3d-container') {
       alphaTest: 0.01
     });
 
-    const mesh = new THREE.Mesh(geo, mat);
+    mesh = new THREE.Mesh(geo, mat);
     mesh.rotation.set(
       THREE.MathUtils.degToRad(s('rotX', 0)),
       THREE.MathUtils.degToRad(s('rotY', 0)),
@@ -170,11 +222,13 @@ export async function initHero3D(containerSelector = '#hero-3d-container') {
       observer.disconnect();
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
-      renderer.dispose();
-      geo.dispose();
-      mat.dispose();
-      colorTex.dispose();
-      depthTex.dispose();
+
+      // Safely dispose resources (may be undefined if loading failed)
+      try { if (renderer) renderer.dispose(); } catch(e) {}
+      try { if (geo) geo.dispose(); } catch(e) {}
+      try { if (mat) mat.dispose(); } catch(e) {}
+      try { if (colorTex) colorTex.dispose(); } catch(e) {}
+      try { if (depthTex) depthTex.dispose(); } catch(e) {}
     });
 
   } catch (err) {

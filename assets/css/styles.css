@@ -772,7 +772,7 @@ ul, ol {
 
 .why-work {
   background-color: var(--color-surface);
-  padding: var(--space-32) 0;
+  padding: var(--space-20) 0;
 }
 
 .value-statements {
@@ -1430,197 +1430,6 @@ ul, ol {
   margin-bottom: var(--space-1);
 }
 
-/* ============================================
-   Responsive Design
-   ============================================ */
-
-@media (max-width: 1024px) {
-  .case-studies-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .work-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .case-study-meta-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-6);
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  :root {
-    --font-size-5xl: 2.5rem;
-    --font-size-4xl: 2rem;
-    --font-size-3xl: 1.75rem;
-  }
-
-  .nav-toggle {
-    display: flex;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 72px;
-    left: 0;
-    right: 0;
-    height: calc(100vh - 72px);
-    background-color: var(--color-background);
-    flex-direction: column;
-    padding: var(--space-6);
-    gap: var(--space-4);
-    transform: translateX(100%);
-    transition: transform var(--transition-normal);
-  }
-
-  .nav-links.active {
-    transform: translateX(0);
-  }
-
-  .nav-link {
-    font-size: var(--font-size-lg);
-    padding: var(--space-3) 0;
-  }
-
-  .hero-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-text {
-    margin: 0 auto;
-  }
-
-  .hero-title {
-    font-size: var(--font-size-3xl);
-  }
-
-  .hero-image {
-    order: -1;
-  }
-
-  .hero-portrait {
-    max-width: 280px;
-  }
-
-  .trust-items {
-    flex-direction: column;
-    gap: var(--space-4);
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .section-title {
-    font-size: var(--font-size-2xl);
-  }
-
-  .case-studies-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-  }
-
-  .work-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .about-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .about-image {
-    justify-content: center;
-    order: -1;
-  }
-
-  .contact-actions {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: var(--space-6);
-  }
-
-  .footer-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--space-6);
-  }
-
-  .footer-copyright {
-    text-align: center;
-  }
-
-  .case-study-meta-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .before-after {
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
-  }
-
-  .impact-metrics {
-    grid-template-columns: 1fr;
-  }
-
-  .case-study-nav-grid {
-    flex-direction: column;
-    gap: var(--space-4);
-  }
-
-  .case-study-nav-link--next {
-    text-align: center;
-  }
-
-  .experience-item {
-    grid-template-columns: 1fr;
-    gap: var(--space-2);
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 var(--space-4);
-  }
-
-  .nav-container {
-    padding: 0 var(--space-4);
-  }
-
-  .section-title {
-    font-size: var(--font-size-xl);
-  }
-
-  .case-study-meta-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
-  }
-
-  .case-study-image-block {
-    padding: var(--space-4);
-  }
-
-  .trust-item {
-    width: 100%;
-  }
-}
 
 /* ============================================
    Accessibility Enhancements
@@ -2100,6 +1909,11 @@ Shipped Work — Case Studies
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
   line-height: 1.7;
+  margin-bottom: var(--space-4);
+}
+
+.case-study-btn {
+  display: inline-block;
   margin-bottom: var(--space-4);
 }
 
@@ -2757,43 +2571,371 @@ Selected Work — Additional Projects
     display: none !important;
   }
 }
-
 /* ============================================
-3D Parallax Hero Image
-============================================ */
+   Responsive Design
+   ============================================ */
 
-.hero-parallax {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-}
+@media (max-width: 1024px) {
+  /* Typography scaling for tablet */
+  :root {
+    --font-size-5xl: 3rem;
+    --font-size-4xl: 2.5rem;
+    --font-size-3xl: 2rem;
+  }
 
-.hero-parallax canvas {
-  width: 100% !important;
-  height: 100% !important;
-  border-radius: var(--radius-xl);
-  display: block;
-}
+  .work-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-/* Make hero image container fill available space */
-.hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 500px;
+  .case-study-meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Direction G tablet breakpoints */
+  .value-props {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Scale down value prop icons */
+  .value-prop-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .value-prop-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Process grid: 5 items → 2×2+1 vertical stack */
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+
+  .process-grid::before {
+    display: none;
+  }
+
+  /* Scale down process step numbers */
+  .process-step-number {
+    width: 56px;
+    height: 56px;
+    font-size: var(--font-size-lg);
+  }
+
+  .capabilities-header {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  /* Better spacing for collapsed capabilities */
+  .capability-note {
+    margin-top: var(--space-6);
+    padding: var(--space-5);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  /* Scale results grid to 2×2 */
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+
+  /* Adjust result card padding */
+  .result-card {
+    padding: var(--space-5);
+  }
+
+  /* Adjust result value size for tablet */
+  .result-value {
+    font-size: var(--font-size-2xl);
+  }
+
+  /* Hero credibility: better wrapping */
+  .hero-credibility {
+    justify-content: center;
+    gap: var(--space-4) var(--space-6);
+  }
+
+  .hero-cred-text {
+    font-size: var(--font-size-xs);
+  }
+
+  .hero-cred-icon {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 @media (max-width: 768px) {
+  :root {
+    --font-size-5xl: 2.5rem;
+    --font-size-4xl: 2rem;
+    --font-size-3xl: 1.75rem;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    height: calc(100vh - 72px);
+    background-color: var(--color-background);
+    flex-direction: column;
+    padding: var(--space-6);
+    gap: var(--space-4);
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    font-size: var(--font-size-lg);
+    padding: var(--space-3) 0;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text {
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: var(--font-size-3xl);
+  }
+
   .hero-image {
     order: -1;
-    min-height: 400px;
   }
-  
-  .hero-parallax {
+
+  .hero-portrait {
     max-width: 280px;
-    margin: 0 auto;
+  }
+
+  .trust-items {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .work-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-image {
+    justify-content: center;
+    order: -1;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-6);
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-6);
+  }
+
+  .footer-copyright {
+    text-align: center;
+  }
+
+  .case-study-meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .before-after {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .impact-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-nav-grid {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .case-study-nav-link--next {
+    text-align: center;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  /* Direction G 768px additions */
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .result-value {
+    font-size: var(--font-size-2xl);
+  }
+
+  /* Stack process steps vertically on mobile */
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  /* Scale down process step numbers further on small screens */
+  .process-step-number {
+    width: 48px;
+    height: 48px;
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-3);
+  }
+
+  /* Smaller process step typography */
+  .process-step-title {
+    font-size: var(--font-size-sm);
+  }
+
+  .process-step-desc {
+    font-size: var(--font-size-xs);
+  }
+
+  .case-study-card {
+    grid-template-columns: 1fr;
+  }
+
+  /* Change aspect ratio for better mobile proportions */
+  .case-study-image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .capability-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+    padding: var(--space-5);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .capability-row:last-child {
+    border-bottom: none;
+  }
+
+  /* Stack value props vertically at mobile */
+  .value-props {
+    grid-template-columns: 1fr;
+  }
+
+  /* Additional about grid spacing for mobile */
+  .about-grid {
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Reduce container padding for more content space */
+  .container {
+    padding: 0 var(--space-3);
+  }
+
+  .nav-container {
+    padding: 0 var(--space-3);
+  }
+
+  .section-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .case-study-meta-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .case-study-image-block {
+    padding: var(--space-4);
+  }
+
+  .trust-item {
+    width: 100%;
+  }
+
+  /* Stack results vertically on very small screens */
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  /* Further reduce result value size */
+  .result-value {
+    font-size: var(--font-size-xl);
+  }
+
+  /* Scale process steps down further */
+  .process-grid {
+    gap: var(--space-5);
+  }
+
+  /* Smaller capability row padding */
+  .capability-row {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  /* Tighter value prop spacing */
+  .value-prop {
+    padding: var(--space-5);
+  }
+
+  /* Smaller hero credibility spacing */
+  .hero-credibility {
+    gap: var(--space-3);
   }
 }

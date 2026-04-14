@@ -1,0 +1,39 @@
+# Block all crawlers from main site areas
+User-agent: *
+Disallow: /
+
+# Specific AI scrapers (redundant but explicit)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: anthropic
+Disallow: /
+
+# Archive directory (old directions)
+User-agent: *
+Disallow: /archive/
+
+# Legacy directory
+User-agent: *
+Disallow: /tinyatk.github.io/
+
+# Sitemap (omit or restrict if you don't want indexing)
+# Sitemap: https://yourdomain.com/sitemap.xml
