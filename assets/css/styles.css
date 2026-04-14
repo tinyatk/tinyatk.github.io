@@ -1776,7 +1776,7 @@ Hero — End-to-End Focus
 /* ============================================
 Value Props — Why Work With Me
 ============================================ */
-.why-work { padding: var(--space-20) 0; background: var(--color-surface); }
+.why-work { padding: var(--space-16) 0; background: var(--color-surface); }
 
 .value-props {
   display: grid;
@@ -1831,7 +1831,7 @@ Value Props — Why Work With Me
 Shipped Work — Case Studies
 ============================================ */
 .featured-case-studies {
-  padding: var(--space-24) 0;
+  padding: var(--space-16) 0;
   background: var(--color-background);
 }
 
@@ -2008,7 +2008,7 @@ Results — Impact Delivered
 Delivery Approach — The Process
 ============================================ */
 .delivery-process {
-  padding: var(--space-24) 0;
+  padding: var(--space-16) 0;
   background: var(--color-background);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
@@ -2086,7 +2086,7 @@ Delivery Approach — The Process
 Capabilities — Domain Expertise
 ============================================ */
 .capabilities {
-  padding: var(--space-24) 0;
+  padding: var(--space-16) 0;
   background: var(--color-surface);
 }
 
@@ -2158,7 +2158,7 @@ Capabilities — Domain Expertise
 About — Personality
 ============================================ */
 .about-section {
-  padding: var(--space-24) 0;
+  padding: var(--space-16) 0;
   background: var(--color-surface);
 }
 
@@ -2214,7 +2214,7 @@ About — Personality
 Contact CTA
 ============================================ */
 .contact-cta {
-  padding: var(--space-24) 0;
+  padding: var(--space-16) 0;
   background: var(--color-accent-soft);
 }
 
@@ -2246,7 +2246,7 @@ Contact CTA
 /* ============================================
 Selected Work — Additional Projects
 ============================================ */
-.selected-work { padding: var(--space-24) 0; background: var(--color-surface); }
+.selected-work { padding: var(--space-16) 0; background: var(--color-surface); }
 
 .work-gallery {
   display: grid;
