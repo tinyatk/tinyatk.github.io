@@ -48,7 +48,7 @@ const settings = {
   rotZ: 0,
   meshScale: 1.4,
   invertDepth: true,
-  mobileTiltSensitivity: 1.5
+  mobileTiltSensitivity: 2
 };
 
 export async function initHeroParallax(containerSelector) {
