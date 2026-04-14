@@ -346,13 +346,15 @@ ul, ol {
   align-items: center;
 }
 
-.hero-portrait {
+.hero-portrait,
+.hero-parallax {
   position: relative;
   width: 100%;
   max-width: 420px;
 }
 
-.hero-portrait img {
+.hero-portrait img,
+.hero-parallax canvas {
   width: 100%;
   height: auto;
   border-radius: var(--radius-xl);
@@ -1631,16 +1633,6 @@ is-visible > .section-header {
     --color-text-muted: #444;
   }
 }
-/* ============================================
-Direction G: End-to-End Delivery — Concepts to Shipped Products
-Supplementary styles for directionG-based index.html
-============================================ */
-
-/* Flip hero image horizontally */
-.hero-portrait img {
-  transform: scaleX(-1);
-}
-
 
 
 /* ============================================
@@ -2757,6 +2749,7 @@ Selected Work — Additional Projects
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: var(--space-12);
   }
 
   .hero-text {
@@ -2771,9 +2764,6 @@ Selected Work — Additional Projects
     order: -1;
   }
 
-  .hero-portrait {
-    max-width: 280px;
-  }
 
   .hero {
     padding-top: calc(72px + var(--space-6));
