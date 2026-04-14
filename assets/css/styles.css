@@ -2749,7 +2749,7 @@ Selected Work — Additional Projects
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: var(--space-12);
+    gap: var(--space-8);
   }
 
   .hero-text {
@@ -2766,7 +2766,7 @@ Selected Work — Additional Projects
 
 
   .hero {
-    padding-top: calc(72px + var(--space-6));
+    padding-top: calc(72px + var(--space-0));
   }
 
   .trust-items {
