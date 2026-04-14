@@ -48,7 +48,7 @@ const settings = {
   rotZ: 0,
   meshScale: 1.4,
   invertDepth: true,
-  mobileTiltSensitivity: 2
+  mobileTiltSensitivity: 3
 };
 
 export async function initHeroParallax(containerSelector) {
@@ -182,7 +182,7 @@ export async function initHeroParallax(containerSelector) {
   // Mouse parallax
   const mouse = { x: 0, y: 0 };
   const target = { x: 0, y: 0 };
-  const maxTilt = Math.PI / 18; // 10 degrees
+  const maxTilt = Math.PI / 9; // 20 degrees
 
   let isHovering = false;
   container.addEventListener('mouseenter', () => isHovering = true);
