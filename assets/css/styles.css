@@ -193,7 +193,16 @@ ul, ol {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
-  transition: border-color var(--transition-normal);
+  transform: translateY(0);
+  transition:
+    transform 400ms cubic-bezier(0.25, 0.1, 0.25, 1),
+    border-color var(--transition-normal);
+  will-change: transform;
+}
+
+.nav.is-hidden {
+  transform: translateY(-100%);
+  transition-duration: 300ms;
 }
 
 .nav.scrolled {
@@ -2684,12 +2693,41 @@ Selected Work — Additional Projects
     --font-size-3xl: 1.75rem;
   }
 
+  .nav {
+    /* Mobile: faster, more snappy transitions */
+    transition:
+      transform 350ms cubic-bezier(0.32, 0.72, 0, 1),
+      border-color var(--transition-normal);
+  }
+
+  .nav.is-hidden {
+    transform: translateY(-100%);
+    /* Keep mobile menu accessible when revealed via scroll-up */
+  }
+
+  .nav.is-hidden .nav-toggle {
+    /* Fade toggle slightly when nav hidden — subtle affordance */
+    opacity: 0.6;
+    transition: opacity 200ms ease;
+  }
+
+  .nav.is-hidden:hover {
+    /* Quick reveal on hover at top edge */
+    transform: translateY(0);
+    transition-duration: 250ms;
+  }
+
+  .nav.is-hidden:hover .nav-toggle {
+    opacity: 1;
+  }
+
   .nav-toggle {
     display: flex;
   }
 
   .nav-links {
     position: fixed;
+    /* Dynamic top based on nav visibility state */
     top: 72px;
     left: 0;
     right: 0;
@@ -2700,6 +2738,11 @@ Selected Work — Additional Projects
     gap: var(--space-4);
     transform: translateX(100%);
     transition: transform var(--transition-normal);
+  }
+
+  /* When nav is hidden, mobile menu slides down with it */
+  .nav.is-hidden .nav-links.active {
+    transform: translateY(-72px) translateX(0);
   }
 
   .nav-links.active {
@@ -2730,6 +2773,10 @@ Selected Work — Additional Projects
 
   .hero-portrait {
     max-width: 280px;
+  }
+
+  .hero {
+    padding-top: calc(72px + var(--space-6));
   }
 
   .trust-items {

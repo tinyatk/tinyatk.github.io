@@ -12,7 +12,7 @@ THREE.ACESFilmicToneMapping
 ];
 
 const settings = {
-dispScale: 1,
+dispScale: 1.2,
 dispBias: -0.05,
 segments: 256,
 planeW: 1.12,
@@ -46,7 +46,7 @@ fogDensity: 0.1,
 rotX: 0,
 rotY: 0,
 rotZ: 0,
-meshScale: 1.4,
+meshScale: 1.6,
 invertDepth: true,
 mobileTiltSensitivity: 2
 };
