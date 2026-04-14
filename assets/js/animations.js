@@ -10,8 +10,8 @@
   // CONFIGURATION
   // ============================================
   const config = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -100px 0px',
+    threshold: 0.05,
+    rootMargin: '0px 0px 100px 0px',
     counterDuration: 1500,
     timelineDuration: 2000,
     typewriterSpeed: 50,
