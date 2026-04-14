@@ -215,7 +215,7 @@ if (!e.gamma || !e.beta) return;
 // gamma: left/right tilt (-90 to 90), beta: front/back tilt (-180 to 180)
 // Clamp and normalize to -1 to 1 range
 const tiltX = Math.max(-45, Math.min(45, e.gamma)) / 45;
-const tiltY = Math.max(-55, Math.min(55, e.beta - 55)) / 55; // Subtract 45 for typical phone holding angle
+const tiltY = Math.max(-35, Math.min(35, e.beta - 35)) / 35; // Subtract 35 for typical phone holding angle
 const sensitivity = s('mobileTiltSensitivity', 1.5);
 mouse.x = tiltX * sensitivity;
 mouse.y = -tiltY * sensitivity;
