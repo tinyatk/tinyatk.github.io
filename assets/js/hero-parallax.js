@@ -15,7 +15,7 @@ const settings = {
   dispScale: 1,
   dispBias: -0.05,
   segments: 256,
-  planeW: 1.6,
+  planeW: 1.12,
   planeH: 2,
   roughness: 0.85,
   metalness: 0,
@@ -47,7 +47,8 @@ const settings = {
   rotY: 0,
   rotZ: 0,
   meshScale: 1.4,
-  invertDepth: true
+  invertDepth: true,
+  mobileTiltSensitivity: 1.5
 };
 
 export async function initHeroParallax(containerSelector) {
@@ -68,6 +69,9 @@ export async function initHeroParallax(containerSelector) {
 
   // Check for reduced motion preference
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Detect touch devices early (needed for controls setup)
+  const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 
   const s = (key, fallback) => key in settings ? settings[key] : fallback;
 
@@ -107,6 +111,8 @@ export async function initHeroParallax(containerSelector) {
   controls.enableZoom = false;
   controls.enablePan = false;
   controls.enableRotate = false;
+  // Allow page scrolling on mobile; desktop interactions unchanged
+  controls.touchAction = isTouchDevice ? 'pan-y' : 'none';
 
   // Lights
   const keyLight = new THREE.DirectionalLight(s('keyColor', '#fff4e0'), s('keyInt', 2.5));
@@ -187,6 +193,42 @@ export async function initHeroParallax(containerSelector) {
   };
 
   window.addEventListener('mousemove', handleMouseMove);
+
+  // Mobile: device orientation (gyroscope) tilt controls
+  let orientationEnabled = false;
+
+  const handleDeviceOrientation = (e) => {
+    if (!e.gamma || !e.beta) return;
+    // gamma: left/right tilt (-90 to 90), beta: front/back tilt (-180 to 180)
+    // Clamp and normalize to -1 to 1 range
+    const tiltX = Math.max(-45, Math.min(45, e.gamma)) / 45;
+    const tiltY = Math.max(-45, Math.min(45, e.beta - 45)) / 45; // Subtract 45 for typical phone holding angle
+    const sensitivity = s('mobileTiltSensitivity', 1.5);
+    mouse.x = tiltX * sensitivity;
+    mouse.y = -tiltY * sensitivity;
+  };
+
+  if (isTouchDevice) {
+    // Request permission on iOS 13+
+    if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+      // Wait for first click/touch to request permission (iOS requirement)
+      const requestOrientationPermission = () => {
+        DeviceOrientationEvent.requestPermission().then(permissionState => {
+          if (permissionState === 'granted') {
+            window.addEventListener('deviceorientation', handleDeviceOrientation);
+            orientationEnabled = true;
+          }
+        }).catch(console.error);
+      };
+      // Add one-time click listener to request permission
+      container.addEventListener('click', requestOrientationPermission, { once: true });
+      container.addEventListener('touchstart', requestOrientationPermission, { once: true });
+    } else {
+      // Non-iOS or older devices: add listener directly
+      window.addEventListener('deviceorientation', handleDeviceOrientation);
+      orientationEnabled = true;
+    }
+  }
 
   // Handle resize
   const handleResize = () => {
