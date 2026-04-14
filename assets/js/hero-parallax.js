@@ -112,7 +112,9 @@ export async function initHeroParallax(containerSelector) {
   controls.enablePan = false;
   controls.enableRotate = false;
   // Allow page scrolling on mobile; desktop interactions unchanged
-  controls.touchAction = isTouchDevice ? 'pan-y' : 'none';
+  if (isTouchDevice && renderer.domElement) {
+    renderer.domElement.style.touchAction = 'pan-y';
+  }
 
   // Lights
   const keyLight = new THREE.DirectionalLight(s('keyColor', '#fff4e0'), s('keyInt', 2.5));
