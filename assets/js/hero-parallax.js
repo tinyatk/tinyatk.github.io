@@ -46,9 +46,9 @@ fogDensity: 0.1,
 rotX: 0,
 rotY: 0,
 rotZ: 0,
-meshScale: 1.6,
+meshScale: 3.5,
 invertDepth: true,
-mobileTiltSensitivity: 2
+mobileTiltSensitivity: 1.5
 };
 
 export async function initHeroParallax(containerSelector) {
