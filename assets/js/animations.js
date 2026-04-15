@@ -22,7 +22,7 @@
   // INTERSECTION OBSERVER
   // ============================================
   const animatedSections = document.querySelectorAll(
-    '.anim-logo-strip, .anim-why-work, .anim-case-studies, .anim-selected-work, ' +
+    '.anim-logo-strip, .anim-split-cards, .anim-case-studies, .anim-selected-work, ' +
     '.anim-results, .anim-process, .anim-capabilities, .anim-about, .anim-contact'
   );
 
@@ -41,6 +41,10 @@
   });
 
   animatedSections.forEach(section => observer.observe(section));
+
+// Also observe individual split cards for staggered reveals
+const splitCards = document.querySelectorAll('.split-card');
+splitCards.forEach(card => observer.observe(card));
 
   // ============================================
   // SECTION HANDLERS
