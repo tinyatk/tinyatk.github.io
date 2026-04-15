@@ -31,36 +31,73 @@
     });
   }
 
-  // ============================================
-  // Scroll-based Navigation Background
-  // ============================================
+// ============================================
+// Scroll-based Navigation Hide/Show
+// ============================================
 
-  function handleScroll() {
-    const scrollY = window.scrollY;
+let lastScrollY = window.scrollY || 0;
+let scrollDirection = "up";
+const scrollThreshold = 10;
 
+function handleScroll() {
+  const currentScrollY = window.scrollY;
+  
+  // Update "scrolled" class for background style
+  if (nav) {
+    if (currentScrollY > 50) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+  }
+  
+  // Always show nav at very top
+  if (currentScrollY <= 0) {
+    if (nav) nav.classList.remove("is-hidden");
+    lastScrollY = currentScrollY;
+    return;
+  }
+  
+  const scrollDelta = currentScrollY - lastScrollY;
+  
+  // Only process if scroll threshold exceeded
+  if (Math.abs(scrollDelta) < scrollThreshold) {
+    return;
+  }
+  
+  const newDirection = scrollDelta > 0 ? "down" : "up";
+  
+  if (newDirection !== scrollDirection) {
+    scrollDirection = newDirection;
+    
     if (nav) {
-      if (scrollY > 50) {
-        nav.classList.add('scrolled');
+      if (scrollDirection === "down" && currentScrollY > 80) {
+        // Scrolling down: hide nav
+        nav.classList.add("is-hidden");
       } else {
-        nav.classList.remove('scrolled');
+        // Scrolling up: reveal nav
+        nav.classList.remove("is-hidden");
       }
     }
   }
+  
+  lastScrollY = currentScrollY;
+}
 
-  // Throttled scroll handler
-  let ticking = false;
-  window.addEventListener('scroll', function() {
-    if (!ticking) {
-      window.requestAnimationFrame(function() {
-        handleScroll();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
+// Throttled scroll handler
+let ticking = false;
+window.addEventListener("scroll", function() {
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      handleScroll();
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, { passive: true });
 
-  // Initial scroll check
-  handleScroll();
+// Initial scroll check
+handleScroll();
 
   // ============================================
   // Smooth Scroll for Anchor Links

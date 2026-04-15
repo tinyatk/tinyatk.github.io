@@ -1771,205 +1771,166 @@ Hero — End-to-End Focus
 }
 
 /* ============================================
-Value Props — Why Work With Me (Before/After Split Cards)
+Why Work With Me — Before/After Split Cards (Direction D)
 ============================================ */
-.why-work { padding: var(--space-16) 0; background: var(--color-surface); }
-
-/* Split Card Scroll Animation Styles */
-.split-card {
-  --anim-duration: 600ms;
-  --anim-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.why-work {
+  min-height: 100vh;
+  padding: var(--space-16) 0;
+  background: var(--color-background);
 }
-
-.split-card .split-before,
-.split-card .split-after {
-  border-top-right-radius: calc(var(--radius-xl) - 1px);
-  border-bottom-right-radius: calc(var(--radius-xl) - 1px);
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: opacity var(--anim-duration) var(--anim-easing),
-              transform var(--anim-duration) var(--anim-easing);
-}
-
-.split-card .split-after {
-  border-top-right-radius: calc(var(--radius-xl) - 1px);
-  border-bottom-right-radius: calc(var(--radius-xl) - 1px);
-  transform: translateX(30px);
-  transition-delay: 100ms;
-}
-
-.split-card.is-visible .split-before,
-.split-card.is-visible .split-after {
-  border-top-right-radius: calc(var(--radius-xl) - 1px);
-  border-bottom-right-radius: calc(var(--radius-xl) - 1px);
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Stagger delays for cards */
-.split-card:nth-child(1) .split-before,
-.split-card:nth-child(1) .split-after { transition-delay: 0ms; }
-  border-top-right-radius: calc(var(--radius-xl) - 1px);
-  border-bottom-right-radius: calc(var(--radius-xl) - 1px);
-.split-card:nth-child(1) .split-after { transition-delay: 100ms; }
-  border-top-right-radius: calc(var(--radius-xl) - 1px);
-  border-bottom-right-radius: calc(var(--radius-xl) - 1px);
-
-.split-card:nth-child(2) .split-before,
-.split-card:nth-child(2) .split-after { transition-delay: 150ms; }
-  border-top-right-radius: calc(var(--radius-xl) - 1px);
-  border-bottom-right-radius: calc(var(--radius-xl) - 1px);
-.split-card:nth-child(2) .split-after { transition-delay: 250ms; }
-  border-top-right-radius: calc(var(--radius-xl) - 1px);
-  border-bottom-right-radius: calc(var(--radius-xl) - 1px);
-
-.split-card:nth-child(3) .split-before,
-.split-card:nth-child(3) .split-after { transition-delay: 300ms; }
-  border-top-right-radius: calc(var(--radius-xl) - 1px);
-  border-bottom-right-radius: calc(var(--radius-xl) - 1px);
-.split-card:nth-child(3) .split-after { transition-delay: 400ms; }
-  border-top-right-radius: calc(var(--radius-xl) - 1px);
-  border-bottom-right-radius: calc(var(--radius-xl) - 1px);
-
-.split-card:nth-child(4) .split-before,
-.split-card:nth-child(4) .split-after { transition-delay: 450ms; }
-  border-top-right-radius: calc(var(--radius-xl) - 1px);
-  border-bottom-right-radius: calc(var(--radius-xl) - 1px);
-.split-card:nth-child(4) .split-after { transition-delay: 550ms; }
-  border-top-right-radius: calc(var(--radius-xl) - 1px);
-  border-bottom-right-radius: calc(var(--radius-xl) - 1px);
 
 .split-cards-container {
-display: flex;
-flex-direction: column;
-gap: var(--space-6);
-max-width: 900px;
-margin: var(--space-10) auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  max-width: 900px;
+  margin: var(--space-10) auto 0;
 }
 
 .split-card {
-display: grid;
-grid-template-columns: 1fr 1fr;
-background: var(--color-surface);
-border-radius: var(--radius-xl);
-box-shadow: var(--shadow-card);
-border: 1px solid var(--color-border);
-transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.split-card:hover {
-transform: translateY(-4px);
-box-shadow: var(--shadow-card-hover);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(27, 102, 255, 0.08);
+  border: 1px solid var(--color-border);
 }
 
 .split-side {
-padding: var(--space-8);
-position: relative;
-display: flex;
-flex-direction: column;
-align-items: flex-start;
+  padding: var(--space-8);
+  position: relative;
 }
 
 .split-before {
-  border-top-left-radius: calc(var(--radius-xl) - 1px);
-  border-bottom-left-radius: calc(var(--radius-xl) - 1px);
-background: var(--color-error-soft);
-border-right: 2px dashed var(--color-border);
+  background: #FFF5F5;
+  border-right: 2px dashed var(--color-border);
 }
 
 .split-before::after {
-content: 'BEFORE';
-position: absolute;
-top: var(--space-4);
-left: var(--space-4);
-font-size: 0.75rem;
-font-weight: 600;
-color: var(--color-error);
-background: var(--color-surface);
-padding: var(--space-1) var(--space-3);
-border-radius: var(--space-1);
+  content: 'BEFORE';
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #9B2C2C;
+  background: var(--color-surface);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--space-1);
 }
 
 .split-after {
-  border-top-right-radius: calc(var(--radius-xl) - 1px);
-  border-bottom-right-radius: calc(var(--radius-xl) - 1px);
-background: var(--color-accent-soft);
-position: relative;
+  background: var(--color-accent-soft);
+  position: relative;
 }
 
 .split-after::after {
-content: 'AFTER';
-position: absolute;
-top: var(--space-4);
-left: var(--space-4);
-font-size: 0.75rem;
-font-weight: 600;
-color: var(--color-accent);
-background: var(--color-surface);
-padding: var(--space-1) var(--space-3);
-border-radius: var(--space-1);
+  content: 'AFTER';
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  background: var(--color-surface);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--space-1);
 }
 
 .split-arrow {
-position: absolute;
-top: 50%;
-right: -16px;
-transform: translateY(-50%);
-width: 32px;
-height: 32px;
-background: var(--color-accent);
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-z-index: 10;
-box-shadow: 0 4px 12px color-mix(in srgb, var(--color-accent) 20%, transparent);
-}
-
-.split-arrow::after {
-content: '';
-width: 18px;
-height: 18px;
-background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'/%3E%3Cpolyline points='12 5 19 12 12 19'/%3E%3C/svg%3E") center/contain no-repeat;
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(27, 102, 255, 0.3);
 }
 
 .split-icon {
-width: 72px;
-height: 72px;
-margin-bottom: var(--space-4);
+  width: 80px;
+  height: 80px;
+  margin-bottom: var(--space-4);
 }
 
 .split-title {
-font-family: var(--font-family-heading);
-font-size: 1.5rem;
-margin-bottom: var(--space-3);
-color: var(--color-text-primary);
+  font-family: var(--font-family-heading);
+  font-size: 1.375rem;
+  margin-bottom: var(--space-3);
+  color: var(--color-text-primary);
 }
 
-.split-desc {
-font-size: var(--font-size-base);
-color: var(--color-text-secondary);
-line-height: 1.6;
+.pain-point {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
 }
+
+.pain-point svg {
+  width: 24px;
+  height: 24px;
+  color: #D94B4B;
+  flex-shrink: 0;
+}
+
+.solution {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.solution svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
 /* Mobile responsive for split cards */
 @media (max-width: 768px) {
-.split-card {
-grid-template-columns: 1fr;
+  .split-card {
+    grid-template-columns: 1fr;
+  }
+  .split-before {
+    border-right: none;
+    border-bottom: 2px dashed var(--color-border);
+  }
+  .split-side {
+    padding: var(--space-6);
+  }
+  .split-icon {
+    width: 64px;
+    height: 64px;
+  }
+  .split-arrow {
+    top: auto;
+    bottom: -20px;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+  }
+  .pain-point svg,
+  .solution svg {
+    width: 20px;
+    height: 20px;
+  }
 }
-.split-before {
-  border-top-left-radius: calc(var(--radius-xl) - 1px);
-  border-bottom-left-radius: calc(var(--radius-xl) - 1px);
-border-right: none;
-border-bottom: 2px dashed var(--color-border);
-}
-.split-side {
-padding: var(--space-6);
-}
-.split-icon {
-width: 56px;
-height: 56px;
-}
-}
+
 
 /* ============================================
 Shipped Work — Case Studies
@@ -2462,12 +2423,11 @@ Selected Work — Additional Projects
 
 /* ============================================
    SCROLL ANIMATIONS - applied variants
-   1A, 2B, 3A, 4D, 5A, 6B, 7A, 8A, 9D
+   1A, 3A, 4D, 5A, 6B, 7A, 8A, 9D
 ======================================== */
 
 /* Base animation state */
 .anim-logo-item,
-.anim-value-prop,
 .anim-case-study-card,
 .anim-work-card,
 .anim-results,
@@ -2508,27 +2468,23 @@ Selected Work — Additional Projects
   transform: translateY(0);
 }
 
-.anim-why-work.is-visible .anim-value-prop:nth-child(1) { transition-delay: 0ms; }
-.anim-why-work.is-visible .anim-value-prop:nth-child(2) { transition-delay: 100ms; }
-.anim-why-work.is-visible .anim-value-prop:nth-child(3) { transition-delay: 200ms; }
-.anim-why-work.is-visible .anim-value-prop:nth-child(4) { transition-delay: 300ms; }
-
-.anim-why-work .anim-value-icon svg {
-  transform: rotate(-180deg);
+/* Split Cards Animation */
+.anim-split-cards .split-card {
   opacity: 0;
-  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              opacity 0.5s ease;
+  transform: translateY(40px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.anim-why-work.is-visible .anim-value-icon svg {
-  transform: rotate(0deg);
+.anim-split-cards.is-visible .split-card {
   opacity: 1;
+  transform: translateY(0);
 }
 
-.anim-why-work.is-visible .anim-value-prop:nth-child(1) .anim-value-icon svg { transition-delay: 150ms; }
-.anim-why-work.is-visible .anim-value-prop:nth-child(2) .anim-value-icon svg { transition-delay: 250ms; }
-.anim-why-work.is-visible .anim-value-prop:nth-child(3) .anim-value-icon svg { transition-delay: 350ms; }
-.anim-why-work.is-visible .anim-value-prop:nth-child(4) .anim-value-icon svg { transition-delay: 450ms; }
+.anim-split-cards.is-visible .split-card:nth-child(1) { transition-delay: 0ms; }
+.anim-split-cards.is-visible .split-card:nth-child(2) { transition-delay: 100ms; }
+.anim-split-cards.is-visible .split-card:nth-child(3) { transition-delay: 200ms; }
+.anim-split-cards.is-visible .split-card:nth-child(4) { transition-delay: 300ms; }
 
 /* 3A: Case Studies - Card Expansion */
 .anim-case-studies .anim-case-study-card {

@@ -1,6 +1,6 @@
 /**
  * Scroll Animations for Portfolio
- * Selected variants: 1A, 2B, 3A, 4D, 5A, 6B, 7A, 8A, 9D
+ * Selected variants: 1A, 3A, 4D, 5A, 6B, 7A, 8A, 9D
  */
 
 (function() {
@@ -42,9 +42,9 @@
 
   animatedSections.forEach(section => observer.observe(section));
 
-// Also observe individual split cards for staggered reveals
-const splitCards = document.querySelectorAll('.split-card');
-splitCards.forEach(card => observer.observe(card));
+  // Also observe individual split cards for staggered reveals
+  const splitCards = document.querySelectorAll('.split-card');
+  splitCards.forEach(card => observer.observe(card));
 
   // ============================================
   // SECTION HANDLERS
@@ -154,7 +154,7 @@ splitCards.forEach(card => observer.observe(card));
   // 8A: About - Parallax
   function handleAbout(section) {
     const portrait = section.querySelector('.anim-about-portrait img') ||
-                    section.querySelector('.anim-about-portrait');
+                     section.querySelector('.anim-about-portrait');
     if (!portrait) return;
 
     function update() {
