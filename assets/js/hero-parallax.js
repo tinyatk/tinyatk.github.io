@@ -62,10 +62,11 @@ return;
 const parentWidth = container.parentElement?.clientWidth || container.clientWidth || 420;
 const parentHeight = container.parentElement?.clientHeight || container.clientHeight || parentWidth * 1.25;
 
-// Set explicit styles on container
-container.style.width = parentWidth + 'px';
-container.style.height = parentHeight + 'px';
-container.style.display = 'block';
+  // Set explicit styles on container (cap at viewport width to prevent horizontal overflow)
+  container.style.width = Math.min(parentWidth, document.documentElement.clientWidth) + 'px';
+  container.style.height = parentHeight + 'px';
+  container.style.display = 'block';
+  container.style.maxWidth = '100%';
 
 // Check for reduced motion preference
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
