@@ -133,7 +133,7 @@ handleScroll();
 
   // Elements to animate on scroll - sections and their animated children
   const animateElements = document.querySelectorAll(
-    'section, .case-study-card, .work-card, .value-item, .value-prop, .section-header, .trust-item, .logo-strip, .process-step, .result-card, .capability-row, .about-quote'
+    'section, .case-study-card, .work-card, .value-item, .value-prop, .section-header, .trust-item, .logo-strip, .process-step, .result-card, .capability-row, .capability-card, .about-quote, .split-card, .testimonial-card'
   );
 
   function initScrollAnimations() {
