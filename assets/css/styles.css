@@ -128,7 +128,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* ============================================
    Hero
    ============================================ */
-.hero { padding: calc(72px + var(--space-24)) 0 var(--space-20); }
+.hero { 
+
+padding: calc(72px + var(--space-4)) 0 var(--space-20); 
+
+
+}
 .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center; max-width: 100%; }
 .hero-text { max-width: 560px; }
 .hero-title { font-size: var(--font-size-5xl); font-weight: 400; line-height: var(--line-height-tight); margin-bottom: var(--space-6); letter-spacing: -0.02em; }
