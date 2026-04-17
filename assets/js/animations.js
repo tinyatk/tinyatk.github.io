@@ -21,10 +21,10 @@
   // ============================================
   // INTERSECTION OBSERVER
   // ============================================
-  const animatedSections = document.querySelectorAll(
-    '.anim-logo-strip, .anim-split-cards, .anim-case-studies, .anim-selected-work, ' +
-    '.anim-results, .anim-process, .anim-capabilities, .anim-about, .anim-contact, .anim-testimonials'
-  );
+const animatedSections = document.querySelectorAll(
+  '.anim-logo-strip, .anim-why-work, .anim-case-studies, .anim-selected-work, ' +
+  '.anim-results, .anim-process, .anim-capabilities, .anim-about, .anim-contact, .anim-testimonials'
+);
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
