@@ -130,7 +130,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
    ============================================ */
 .hero { 
 
-padding: calc(72px + var(--space-4)) 0 var(--space-20); 
+padding: calc(72px + var(--space-16)) 0 var(--space-20); 
 
 
 }
