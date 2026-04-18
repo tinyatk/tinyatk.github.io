@@ -223,8 +223,6 @@ padding: calc(72px + var(--space-16)) 0 var(--space-20);
 .case-study-impact-item span { color: var(--color-text-muted); }
 .case-study-impact-icon { width: 14px; height: 14px; flex-shrink: 0; }
 .case-study-impact-icon svg { width: 100%; height: 100%; }
-.case-study-role { display: inline-block; font-size: var(--font-size-xs); font-weight: 500; color: var(--color-accent); background: var(--color-accent-soft); padding: 2px 8px; border-radius: var(--radius-sm); margin-bottom: var(--space-3); }
-
 /* ============================================
    Selected Work
    ============================================ */
@@ -285,7 +283,7 @@ padding: calc(72px + var(--space-16)) 0 var(--space-20);
 .capabilities { padding: var(--space-20) 0; background: var(--color-surface); }
 .capabilities-header { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: start; margin-bottom: var(--space-12); }
 .capabilities-intro h2 { font-size: var(--font-size-2xl); margin-bottom: var(--space-3); }
-.capabilities-intro p { font-size: var(--font-size-md); color: var(--color-text-secondary); line-height: var(--line-height-relaxed); }
+.capabilities-intro p:not(.section-kicker) { font-size: var(--font-size-md); color: var(--color-text-secondary); line-height: var(--line-height-relaxed); }
 .capability-note { padding: var(--space-8); background: var(--color-background); border-radius: var(--radius-xl); position: relative; overflow: hidden; }
 .capability-note::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--color-accent), var(--color-teal), var(--color-accent)); }
 .capability-note p { font-family: var(--font-family-heading); font-size: var(--font-size-lg); color: var(--color-text-primary); line-height: 1.5; margin: 0; }
@@ -329,7 +327,7 @@ padding: calc(72px + var(--space-16)) 0 var(--space-20);
 .about-image-side { position: relative; }
 .about-image-side img { width: 100%; height: auto; border-radius: var(--radius-xl); }
 .about-content-side { padding-right: var(--space-8); }
-.about-content-side p { font-size: var(--font-size-md); color: var(--color-text-secondary); line-height: var(--line-height-relaxed); margin-bottom: var(--space-4); }
+.about-content-side p:not(.section-kicker) { font-size: var(--font-size-md); color: var(--color-text-secondary); line-height: var(--line-height-relaxed); margin-bottom: var(--space-4); }
 .about-quote { font-family: var(--font-family-heading); font-size: var(--font-size-lg); color: var(--color-text-primary); line-height: 1.5; padding: var(--space-6) var(--space-6) var(--space-6) var(--space-8); border-left: 3px solid var(--color-accent); background: var(--color-background); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: var(--space-6) 0; }
 .about-personal { font-size: var(--font-size-sm); color: var(--color-text-muted); margin-top: var(--space-6); padding-top: var(--space-6); border-top: 1px solid var(--color-border); }
 
