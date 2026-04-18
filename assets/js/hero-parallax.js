@@ -10,7 +10,7 @@ const TONE_MAPS = [
 ];
 
 const settings = {
-  dispScale: 1.2,
+  dispScale: 1.1,
   dispBias: -0.05,
   segments: 256,
   planeW: 1.12,
@@ -44,9 +44,9 @@ const settings = {
   rotX: 0,
   rotY: 0,
   rotZ: 0,
-  meshScale: 3.3,
+  meshScale: 3.1,
   invertDepth: true,
-  mobileTiltSensitivity: 1.2
+  mobileTiltSensitivity: 1.1
 };
 
 export async function initHeroParallax(containerSelector) {
@@ -196,7 +196,7 @@ export async function initHeroParallax(containerSelector) {
   // --- Input State ---
   const mouse = { x: 0, y: 0 };
   const target = { x: 0, y: 0 };
-  const maxTilt = Math.PI / 18; // ~10 degrees
+  const maxTilt = Math.PI / 24; // ~7.5 degrees
   let isHovering = false;
 
   // --- Desktop: Mouse Parallax ---
