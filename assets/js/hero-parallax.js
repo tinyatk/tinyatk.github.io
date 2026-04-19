@@ -193,6 +193,13 @@ export async function initHeroParallax(containerSelector) {
   // --- Initial Render ---
   renderer.render(scene, camera);
 
+  // --- Intersection Observer (pause when not visible) ---
+  let isVisible = true;
+  const observer = new IntersectionObserver((entries) => {
+    isVisible = entries[0].isIntersecting;
+  }, { threshold: 0.1 });
+  observer.observe(container);
+
   // --- Input State ---
   const mouse = { x: 0, y: 0 };
   const target = { x: 0, y: 0 };
@@ -259,6 +266,8 @@ export async function initHeroParallax(containerSelector) {
 
   function animate() {
     animationId = requestAnimationFrame(animate);
+
+    if (!isVisible) return;
 
     if (!prefersReducedMotion) {
       target.x += (mouse.x * maxTilt - target.x) * 0.05;
