@@ -55,6 +55,7 @@ function handleScroll() {
   if (currentScrollY <= 0) {
     if (nav) nav.classList.remove("is-hidden");
     lastScrollY = currentScrollY;
+    scrollDirection = "up";
     return;
   }
   
@@ -69,15 +70,14 @@ function handleScroll() {
   
   if (newDirection !== scrollDirection) {
     scrollDirection = newDirection;
-    
-    if (nav) {
-      if (scrollDirection === "down" && currentScrollY > 80) {
-        // Scrolling down: hide nav
-        nav.classList.add("is-hidden");
-      } else {
-        // Scrolling up: reveal nav
-        nav.classList.remove("is-hidden");
-      }
+  }
+  
+  // Apply hide/show based on current direction
+  if (nav) {
+    if (scrollDirection === "down" && currentScrollY > 80) {
+      nav.classList.add("is-hidden");
+    } else if (scrollDirection === "up") {
+      nav.classList.remove("is-hidden");
     }
   }
   
@@ -107,8 +107,16 @@ handleScroll();
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
 
-      // Skip if it's just "#" or empty
-      if (href === '#' || !href) return;
+      // Handle Home link (href="#")
+      if (href === '#' || !href) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setTimeout(function() {
+          lastScrollY = window.scrollY;
+          scrollDirection = "up";
+        }, 800);
+        return;
+      }
 
       const target = document.querySelector(href);
 
@@ -123,6 +131,12 @@ handleScroll();
           top: targetPosition,
           behavior: 'smooth'
         });
+
+        // Reset scroll tracking after smooth scroll completes
+        setTimeout(function() {
+          lastScrollY = window.scrollY;
+          scrollDirection = "up";
+        }, 800);
       }
     });
   });
