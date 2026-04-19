@@ -26,3 +26,5 @@ serve.py
 
 /old
 help.txt
+rewrite.sh
+rewrite-authors.sh
